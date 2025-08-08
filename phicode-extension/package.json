@@ -6,8 +6,8 @@
   "publisher": "banes-lab",
   "main": "./out/extension.js",
   "scripts": {
-    "build": "vsce package",
     "compile": "tsc -p ./",
+    "build": "npm run compile && vsce package",
     "watch": "tsc -watch -p ./"
   },
   "engines": {
@@ -29,8 +29,8 @@
     "onLanguage:phicode"
   ],
   "capabilities": {
-  "virtualWorkspaces": true,
-  "copilot": true
+    "virtualWorkspaces": true,
+    "copilot": true
   },
   "contributes": {
     "languages": [
@@ -58,7 +58,7 @@
         "path": "./syntaxes/phicode.tmLanguage.json"
       }
     ],
-        "iconThemes": [
+    "iconThemes": [
       {
         "id": "phicode-icons",
         "label": "PHICODE File Icons",
@@ -74,29 +74,68 @@
     "commands": [
       {
         "command": "phicode.convertPythonToPhicode",
-        "title": "Convert Python to Phicode",
-        "category": "Phicode"
+        "title": "Convert to PHICODE...",
+        "category": "PHICODE",
+        "icon": {
+          "light": "./icons/phicode-light.png",
+          "dark": "./icons/phicode-dark.png"
+        }
       },
       {
         "command": "phicode.convertPhicodeToPython",
-        "title": "Convert Phicode to Python",
-        "category": "Phicode"
+        "title": "Convert to Python...",
+        "category": "PHICODE",
+        "icon": {
+          "light": "./icons/python-logo.png",
+          "dark": "./icons/python-logo.png"
+        }
+      },
+      {
+        "command": "phicode.showTutorial",
+        "title": "Show PHICODE Symbol Tutorial",
+        "category": "PHICODE"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "when": "resourceExtname == .py",
           "command": "phicode.convertPythonToPhicode",
-          "group": "1_modification"
+          "when": "editorLangId == python && resourceExtname == .py",
+          "group": "1_modification@1",
+          "title": "Convert to PHICODE (.φ)..."
         },
         {
-          "when": "resourceExtname == .φ",
           "command": "phicode.convertPhicodeToPython",
-          "group": "1_modification"
+          "when": "editorLangId == phicode && resourceExtname == .φ",
+          "group": "1_modification@1",
+          "title": "Convert to Python (.py)..."
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "phicode.convertPythonToPhicode",
+          "when": "resourceExtname == .py",
+          "group": "5_convert@1"
+        },
+        {
+          "command": "phicode.convertPhicodeToPython",
+          "when": "resourceExtname == .φ",
+          "group": "5_convert@1"
         }
       ]
     },
+    "keybindings": [
+      {
+        "command": "phicode.convertPythonToPhicode",
+        "key": "ctrl+alt+p",
+        "when": "editorLangId == python"
+      },
+      {
+        "command": "phicode.convertPhicodeToPython",
+        "key": "ctrl+alt+shift+p",
+        "when": "editorLangId == phicode"
+      }
+    ],
     "configurationDefaults": {
       "[phicode]": {
         "editor.insertSpaces": true,
@@ -105,6 +144,21 @@
         "files.trimTrailingWhitespace": true,
         "editor.autoIndent": "full",
         "editor.formatOnType": true
+      }
+    },
+    "configuration": {
+      "title": "PHICODE",
+      "properties": {
+        "phicode.autoConvert": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically suggest converting Python keywords to PHICODE symbols"
+        },
+        "phicode.symbolHints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show hover hints for PHICODE symbols"
+        }
       }
     }
   },
@@ -118,7 +172,8 @@
   "homepage": "https://github.com/Varietyz/phicode-vscode-extension#readme",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^24.2.1",
     "@types/vscode": "^1.74.0",
-    "typescript": "^4.9.0"
+    "typescript": "^5.2.2"
   }
 }
