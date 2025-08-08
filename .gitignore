@@ -399,3 +399,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+icon_generator.html
+file_icon_generator.html
+content_extract.py
+all_contents.txt

@@ -1,0 +1,347 @@
+{
+  "Function Definition": {
+    "prefix": ["def", "ƒ"],
+    "body": [
+      "ƒ ${1:function_name}(${2:parameters}):",
+      "    ${3:pass}"
+    ],
+    "description": "Function definition using φ syntax"
+  },
+  "Async Function Definition": {
+    "prefix": ["async def", "⟳ƒ"],
+    "body": [
+      "⟳ ƒ ${1:function_name}(${2:parameters}):",
+      "    ${3:pass}"
+    ],
+    "description": "Async function definition using φ syntax"
+  },
+  "Class Definition": {
+    "prefix": ["class", "ℂ"],
+    "body": [
+      "ℂ ${1:ClassName}:",
+      "    ƒ __init__(self${2:, parameters}):",
+      "        ${3:pass}"
+    ],
+    "description": "Class definition using φ syntax"
+  },
+  "If Statement": {
+    "prefix": ["if", "¿"],
+    "body": [
+      "¿ ${1:condition}:",
+      "    ${2:pass}"
+    ],
+    "description": "If statement using φ syntax"
+  },
+  "If-Else Statement": {
+    "prefix": ["ifelse", "¿⋄"],
+    "body": [
+      "¿ ${1:condition}:",
+      "    ${2:pass}",
+      "⋄:",
+      "    ${3:pass}"
+    ],
+    "description": "If-else statement using φ syntax"
+  },
+  "If-Elif-Else Statement": {
+    "prefix": ["ifelifelse", "¿⤷⋄"],
+    "body": [
+      "¿ ${1:condition}:",
+      "    ${2:pass}",
+      "⤷ ${3:condition}:",
+      "    ${4:pass}",
+      "⋄:",
+      "    ${5:pass}"
+    ],
+    "description": "If-elif-else statement using φ syntax"
+  },
+  "For Loop": {
+    "prefix": ["for", "∀"],
+    "body": [
+      "∀ ${1:item} ∈ ${2:iterable}:",
+      "    ${3:pass}"
+    ],
+    "description": "For loop using φ syntax"
+  },
+  "While Loop": {
+    "prefix": ["while", "↻"],
+    "body": [
+      "↻ ${1:condition}:",
+      "    ${2:pass}"
+    ],
+    "description": "While loop using φ syntax"
+  },
+  "Try-Except": {
+    "prefix": ["try", "∴"],
+    "body": [
+      "∴:",
+      "    ${1:pass}",
+      "⛒ ${2:Exception}:",
+      "    ${3:pass}"
+    ],
+    "description": "Try-except block using φ syntax"
+  },
+  "Try-Except-Finally": {
+    "prefix": ["tryfinally", "∴⇗"],
+    "body": [
+      "∴:",
+      "    ${1:pass}",
+      "⛒ ${2:Exception}:",
+      "    ${3:pass}",
+      "⇗:",
+      "    ${4:pass}"
+    ],
+    "description": "Try-except-finally block using φ syntax"
+  },
+  "With Statement": {
+    "prefix": ["with", "∥"],
+    "body": [
+      "∥ ${1:context} ↦ ${2:variable}:",
+      "    ${3:pass}"
+    ],
+    "description": "With statement using φ syntax"
+  },
+  "Lambda Function": {
+    "prefix": ["lambda", "λ"],
+    "body": [
+      "λ ${1:parameters}: ${2:expression}"
+    ],
+    "description": "Lambda function using φ syntax"
+  },
+  "List Comprehension": {
+    "prefix": ["listcomp", "[]∀"],
+    "body": [
+      "[${1:expression} ∀ ${2:item} ∈ ${3:iterable}]"
+    ],
+    "description": "List comprehension using φ syntax"
+  },
+  "Dict Comprehension": {
+    "prefix": ["dictcomp", "{}∀"],
+    "body": [
+      "{${1:key}: ${2:value} ∀ ${3:item} ∈ ${4:iterable}}"
+    ],
+    "description": "Dictionary comprehension using φ syntax"
+  },
+  "Import Statement": {
+    "prefix": ["import", "⇒"],
+    "body": [
+      "⇒ ${1:module}"
+    ],
+    "description": "Import statement using φ syntax"
+  },
+  "From Import": {
+    "prefix": ["from", "←"],
+    "body": [
+      "← ${1:module} ⇒ ${2:name}"
+    ],
+    "description": "From import statement using φ syntax"
+  },
+  "Print Statement": {
+    "prefix": ["print", "π"],
+    "body": [
+      "π(${1:value})"
+    ],
+    "description": "Print statement using φ syntax"
+  },
+  "Assert Statement": {
+    "prefix": ["assert", "‼"],
+    "body": [
+      "‼ ${1:condition}, \"${2:message}\""
+    ],
+    "description": "Assert statement using φ syntax"
+  },
+  "Global Declaration": {
+    "prefix": ["global", "⟁"],
+    "body": [
+      "⟁ ${1:variable}"
+    ],
+    "description": "Global declaration using φ syntax"
+  },
+  "Nonlocal Declaration": {
+    "prefix": ["nonlocal", "∇"],
+    "body": [
+      "∇ ${1:variable}"
+    ],
+    "description": "Nonlocal declaration using φ syntax"
+  },
+  "Delete Statement": {
+    "prefix": ["del", "∂"],
+    "body": [
+      "∂ ${1:variable}"
+    ],
+    "description": "Delete statement using φ syntax"
+  },
+  "Yield Statement": {
+    "prefix": ["yield", "⟰"],
+    "body": [
+      "⟰ ${1:value}"
+    ],
+    "description": "Yield statement using φ syntax"
+  },
+  "Return Statement": {
+    "prefix": ["return", "⟲"],
+    "body": [
+      "⟲ ${1:value}"
+    ],
+    "description": "Return statement using φ syntax"
+  },
+  "Break Statement": {
+    "prefix": ["break", "⇲"],
+    "body": [
+      "⇲"
+    ],
+    "description": "Break statement using φ syntax"
+  },
+  "Continue Statement": {
+    "prefix": ["continue", "⇉"],
+    "body": [
+      "⇉"
+    ],
+    "description": "Continue statement using φ syntax"
+  },
+  "Pass Statement": {
+    "prefix": ["pass", "⋯"],
+    "body": [
+      "⋯"
+    ],
+    "description": "Pass statement using φ syntax"
+  },
+  "Raise Exception": {
+    "prefix": ["raise", "↑"],
+    "body": [
+      "↑ ${1:Exception}(\"${2:message}\")"
+    ],
+    "description": "Raise exception using φ syntax"
+  },
+  "Boolean True": {
+    "prefix": ["True", "✓"],
+    "body": [
+      "✓"
+    ],
+    "description": "Boolean True using φ syntax"
+  },
+  "Boolean False": {
+    "prefix": ["False", "⊥"],
+    "body": [
+      "⊥"
+    ],
+    "description": "Boolean False using φ syntax"
+  },
+  "None Value": {
+    "prefix": ["None", "Ø"],
+    "body": [
+      "Ø"
+    ],
+    "description": "None value using φ syntax"
+  },
+  "And Operator": {
+    "prefix": ["and", "∧"],
+    "body": [
+      "∧"
+    ],
+    "description": "And operator using φ syntax"
+  },
+  "Or Operator": {
+    "prefix": ["or", "∨"],
+    "body": [
+      "∨"
+    ],
+    "description": "Or operator using φ syntax"
+  },
+  "Not Operator": {
+    "prefix": ["not", "¬"],
+    "body": [
+      "¬"
+    ],
+    "description": "Not operator using φ syntax"
+  },
+  "In Operator": {
+    "prefix": ["in", "∈"],
+    "body": [
+      "∈"
+    ],
+    "description": "In operator using φ syntax"
+  },
+  "Is Operator": {
+    "prefix": ["is", "≡"],
+    "body": [
+      "≡"
+    ],
+    "description": "Is operator using φ syntax"
+  },
+  "Main Guard": {
+    "prefix": ["main", "__main__"],
+    "body": [
+      "¿ __name__ ≡ \"__main__\":",
+      "    ${1:pass}"
+    ],
+    "description": "Main guard using φ syntax"
+  },
+  "Docstring": {
+    "prefix": ["doc", "\"\"\""],
+    "body": [
+      "\"\"\"",
+      "${1:Description}",
+      "",
+      "Args:",
+      "    ${2:param}: ${3:Description}",
+      "",
+      "Returns:",
+      "    ${4:Description}",
+      "\"\"\""
+    ],
+    "description": "Function docstring template"
+  },
+  "Generator Function": {
+    "prefix": ["generator", "ƒ⟰"],
+    "body": [
+      "ƒ ${1:generator_name}(${2:parameters}):",
+      "    ∀ ${3:item} ∈ ${4:iterable}:",
+      "        ⟰ ${5:item}"
+    ],
+    "description": "Generator function using φ syntax"
+  },
+  "Context Manager": {
+    "prefix": ["contextmanager", "ℂ∥"],
+    "body": [
+      "ℂ ${1:ContextManager}:",
+      "    ƒ __enter__(self):",
+      "        ${2:pass}",
+      "        ⟲ self",
+      "",
+      "    ƒ __exit__(self, exc_type, exc_val, exc_tb):",
+      "        ${3:pass}"
+    ],
+    "description": "Context manager class using φ syntax"
+  },
+  "Property": {
+    "prefix": ["property", "@property"],
+    "body": [
+      "@property",
+      "ƒ ${1:property_name}(self):",
+      "    ⟲ self._${1:property_name}",
+      "",
+      "@${1:property_name}.setter",
+      "ƒ ${1:property_name}(self, value):",
+      "    self._${1:property_name} = value"
+    ],
+    "description": "Property with getter and setter using φ syntax"
+  },
+  "Static Method": {
+    "prefix": ["staticmethod", "@staticmethod"],
+    "body": [
+      "@staticmethod",
+      "ƒ ${1:method_name}(${2:parameters}):",
+      "    ${3:pass}"
+    ],
+    "description": "Static method using φ syntax"
+  },
+  "Class Method": {
+    "prefix": ["classmethod", "@classmethod"],
+    "body": [
+      "@classmethod",
+      "ƒ ${1:method_name}(cls${2:, parameters}):",
+      "    ${3:pass}"
+    ],
+    "description": "Class method using φ syntax"
+  }
+}

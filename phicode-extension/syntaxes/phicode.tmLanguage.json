@@ -1,0 +1,487 @@
+{
+  "scopeName": "source.phicode",
+  "name": "PHICODE",
+  "fileTypes": [
+    "φ"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#docstrings"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numeric-literals"
+    },
+    {
+      "include": "#phicode-symbols"
+    },
+    {
+      "include": "#python-keywords"
+    },
+    {
+      "include": "#python-builtin-functions"
+    },
+    {
+      "include": "#python-builtin-constants"
+    },
+    {
+      "include": "#python-operators"
+    },
+    {
+      "include": "#function-definitions"
+    },
+    {
+      "include": "#class-definitions"
+    },
+    {
+      "include": "#decorators"
+    },
+    {
+      "include": "#magic-methods"
+    },
+    {
+      "include": "#identifiers"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.phicode",
+          "match": "#.*$",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.phicode"
+            }
+          }
+        }
+      ]
+    },
+    "docstrings": {
+      "patterns": [
+        {
+          "name": "string.quoted.docstring.multi.python",
+          "begin": "^\\s*(?=[uUrRbBfF]?(\"\"\"|'''))",
+          "end": "(?<='''|\"\"\")",
+          "patterns": [
+            {
+              "include": "#strings"
+            }
+          ]
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.triple.double.phicode",
+          "begin": "([uUrRbBfF]?)(\"\"\")",
+          "end": "(\"\"\")",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.python"
+            },
+            "2": {
+              "name": "punctuation.definition.string.begin.python"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end.python"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.phicode",
+              "match": "\\\\."
+            },
+            {
+              "include": "#string-formatting"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.triple.single.phicode",
+          "begin": "([uUrRbBfF]?)(''')",
+          "end": "(''')",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.python"
+            },
+            "2": {
+              "name": "punctuation.definition.string.begin.python"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end.python"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.phicode",
+              "match": "\\\\."
+            },
+            {
+              "include": "#string-formatting"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.phicode",
+          "begin": "([uUrRbBfF]?)(\")",
+          "end": "(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.python"
+            },
+            "2": {
+              "name": "punctuation.definition.string.begin.python"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end.python"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.phicode",
+              "match": "\\\\."
+            },
+            {
+              "include": "#string-formatting"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.phicode",
+          "begin": "([uUrRbBfF]?)(')",
+          "end": "(')",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.string.python"
+            },
+            "2": {
+              "name": "punctuation.definition.string.begin.python"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end.python"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.phicode",
+              "match": "\\\\."
+            },
+            {
+              "include": "#string-formatting"
+            }
+          ]
+        }
+      ]
+    },
+    "string-formatting": {
+      "patterns": [
+        {
+          "name": "constant.character.format.placeholder.other.python",
+          "match": "{[^}]*}"
+        },
+        {
+          "name": "constant.character.format.placeholder.other.python",
+          "match": "%[#0\\-+ ]?\\*?(?:\\d+|\\*)?(?:\\.(?:\\d+|\\*))?[hlL]?[diouxXeEfFgGcrsa%]"
+        }
+      ]
+    },
+    "numeric-literals": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.hexadecimal.phicode",
+          "match": "\\b0[xX][0-9a-fA-F]+[lL]?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.octal.phicode",
+          "match": "\\b0[oO][0-7]+[lL]?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.binary.phicode",
+          "match": "\\b0[bB][01]+[lL]?\\b"
+        },
+        {
+          "name": "constant.numeric.complex.phicode",
+          "match": "\\b(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?[jJ]\\b"
+        },
+        {
+          "name": "constant.numeric.float.phicode",
+          "match": "\\b\\d+\\.\\d*(?:[eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.float.phicode",
+          "match": "\\b\\.\\d+(?:[eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.float.phicode",
+          "match": "\\b\\d+[eE][+-]?\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.decimal.phicode",
+          "match": "\\b\\d+[lL]?\\b"
+        }
+      ]
+    },
+    "phicode-symbols": {
+      "patterns": [
+        {
+          "name": "constant.language.phicode",
+          "match": "⊥|Ø|✓",
+          "comment": "Boolean and None equivalents: False, None, True"
+        },
+        {
+          "name": "keyword.operator.logical.phicode",
+          "match": "∧|∨|¬|∈|≡",
+          "comment": "Logical operators: and, or, not, in, is"
+        },
+        {
+          "name": "keyword.control.flow.phicode",
+          "match": "¿|⤷|⋄|∀|↻|⇲|⇉|↑|⟲|∥|⟰",
+          "comment": "Control flow: if, elif, else, for, while, break, continue, raise, return, with, yield"
+        },
+        {
+          "name": "keyword.control.exception.phicode",
+          "match": "⛒|⇗|∴",
+          "comment": "Exception handling: except, finally, try"
+        },
+        {
+          "name": "keyword.control.import.phicode",
+          "match": "⇒|←|↦",
+          "comment": "Import and assignment: import, from, as"
+        },
+        {
+          "name": "storage.type.class.phicode",
+          "match": "ℂ",
+          "comment": "Class definition: class"
+        },
+        {
+          "name": "storage.type.function.phicode",
+          "match": "ƒ|λ",
+          "comment": "Function definitions: def, lambda"
+        },
+        {
+          "name": "keyword.other.phicode",
+          "match": "∂|⟁|∇|‼|⟳|⌛|⋯",
+          "comment": "Other keywords: del, global, nonlocal, assert, async, await, pass"
+        },
+        {
+          "name": "support.function.builtin.phicode",
+          "match": "π",
+          "comment": "Built-in functions: print"
+        }
+      ]
+    },
+    "python-keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.flow.phicode",
+          "match": "\\b(if|elif|else|for|while|break|continue|pass|return|yield|raise|try|except|finally|with|async|await)\\b|¿|⤷|⋄|∀|↻|⇲|⇉|⋯|⟲|↑|∴|⛒|⇗|∥|⟳|⌛"
+        },
+        {
+          "name": "keyword.control.import.phicode",
+          "match": "\\b(import|from|as)\\b|⇒|←|↦"
+        },
+        {
+          "name": "keyword.operator.logical.phicode",
+          "match": "\\b(and|or|not|in|is)\\b|∧|∨|¬|∈|≡"
+        },
+        {
+          "name": "storage.type.class.phicode",
+          "match": "\\b(class)\\b|ℂ"
+        },
+        {
+          "name": "storage.type.function.phicode",
+          "match": "\\b(def|lambda)\\b|ƒ|λ"
+        },
+        {
+          "name": "keyword.other.phicode",
+          "match": "\\b(global|nonlocal|del|assert)\\b|⟁|∇|∂|‼"
+        }
+      ]
+    },
+    "python-builtin-constants": {
+      "patterns": [
+        {
+          "name": "constant.language.phicode",
+          "match": "\\b(True|False|None|Ellipsis|NotImplemented)\\b|✓|⊥|Ø"
+        },
+        {
+          "name": "constant.language.phicode",
+          "match": "__(?:debug|doc|file|name|package)__"
+        }
+      ]
+    },
+    "python-builtin-functions": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.phicode",
+          "match": "\\b(abs|all|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|copyright|credits|delattr|dict|dir|divmod|enumerate|eval|exec|exit|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|license|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|quit|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)\\b|π"
+        }
+      ]
+    },
+    "python-builtin-exceptions": {
+      "patterns": [
+        {
+          "name": "support.type.exception.phicode",
+          "match": "\\b(ArithmeticError|AssertionError|AttributeError|BaseException|BlockingIOError|BrokenPipeError|BufferError|BytesWarning|ChildProcessError|ConnectionAbortedError|ConnectionError|ConnectionRefusedError|ConnectionResetError|DeprecationWarning|EOFError|Ellipsis|EnvironmentError|Exception|FileExistsError|FileNotFoundError|FloatingPointError|FutureWarning|GeneratorExit|IOError|ImportError|ImportWarning|IndentationError|IndexError|InterruptedError|IsADirectoryError|KeyError|KeyboardInterrupt|LookupError|MemoryError|ModuleNotFoundError|NameError|NotADirectoryError|NotImplemented|NotImplementedError|OSError|OverflowError|PendingDeprecationWarning|PermissionError|ProcessLookupError|RecursionError|ReferenceError|ResourceWarning|RuntimeError|RuntimeWarning|StopAsyncIteration|StopIteration|SyntaxError|SyntaxWarning|SystemError|SystemExit|TabError|TimeoutError|TypeError|UnboundLocalError|UnicodeDecodeError|UnicodeEncodeError|UnicodeError|UnicodeTranslateError|UnicodeWarning|UserWarning|ValueError|Warning|ZeroDivisionError)\\b"
+        }
+      ]
+    },
+    "python-operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.phicode",
+          "match": "\\+\\+|--|\\+|\\-|\\*|/|//|%|\\*\\*"
+        },
+        {
+          "name": "keyword.operator.comparison.phicode",
+          "match": "==|!=|<>|<|>|<=|>="
+        },
+        {
+          "name": "keyword.operator.assignment.phicode",
+          "match": "=|\\+=|\\-=|\\*=|/=|//=|%=|\\*\\*=|&=|\\|=|\\^=|>>=|<<="
+        },
+        {
+          "name": "keyword.operator.bitwise.phicode",
+          "match": "&|\\||\\^|~|<<|>>"
+        },
+        {
+          "name": "keyword.operator.membership.phicode",
+          "match": "\\bin\\b|\\bnot\\s+in\\b|∈|¬∈"
+        },
+        {
+          "name": "keyword.operator.identity.phicode",
+          "match": "\\bis\\b|\\bis\\s+not\\b|≡|¬≡"
+        }
+      ]
+    },
+    "decorators": {
+      "patterns": [
+        {
+          "name": "entity.name.function.decorator.phicode",
+          "match": "@\\s*[a-zA-Z_][a-zA-Z0-9_]*(?:\\.[a-zA-Z_][a-zA-Z0-9_]*)*",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.decorator.phicode"
+            }
+          }
+        }
+      ]
+    },
+    "function-definitions": {
+      "patterns": [
+        {
+          "name": "meta.function.phicode",
+          "begin": "\\b(def|ƒ)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.function.phicode"
+            },
+            "2": {
+              "name": "entity.name.function.phicode"
+            }
+          },
+          "end": "\\)\\s*:",
+          "patterns": [
+            {
+              "include": "#function-parameters"
+            }
+          ]
+        },
+        {
+          "name": "meta.function.async.phicode",
+          "begin": "\\b(async|⟳)\\s+(def|ƒ)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.async.phicode"
+            },
+            "2": {
+              "name": "storage.type.function.phicode"
+            },
+            "3": {
+              "name": "entity.name.function.phicode"
+            }
+          },
+          "end": "\\)\\s*:",
+          "patterns": [
+            {
+              "include": "#function-parameters"
+            }
+          ]
+        }
+      ]
+    },
+    "function-parameters": {
+      "patterns": [
+        {
+          "name": "variable.parameter.phicode",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        },
+        {
+          "name": "keyword.operator.unpacking.parameter.phicode",
+          "match": "\\*\\*?\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "class-definitions": {
+      "patterns": [
+        {
+          "name": "meta.class.phicode",
+          "begin": "\\b(class|ℂ)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.class.phicode"
+            },
+            "2": {
+              "name": "entity.name.class.phicode"
+            }
+          },
+          "end": ":",
+          "patterns": [
+            {
+              "include": "#class-inheritance"
+            }
+          ]
+        }
+      ]
+    },
+    "class-inheritance": {
+      "patterns": [
+        {
+          "name": "entity.other.inherited-class.phicode",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "magic-methods": {
+      "patterns": [
+        {
+          "name": "support.function.magic.phicode",
+          "match": "\\b__[a-zA-Z0-9_]+__\\b"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.phicode",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}

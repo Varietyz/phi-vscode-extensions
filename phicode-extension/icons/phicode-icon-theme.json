@@ -1,0 +1,37 @@
+{
+  "iconDefinitions": {
+    "phicode": {
+      "iconPath": "./phicode-file-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "φ": "phicode"
+  },
+  "languageIds": {
+    "phicode": "phicode"
+  },
+  "light": {
+    "fileExtensions": {
+      "φ": "phicode"
+    },
+    "languageIds": {
+      "phicode": "phicode"
+    }
+  },
+  "dark": {
+    "fileExtensions": {
+      "φ": "phicode"
+    },
+    "languageIds": {
+      "phicode": "phicode"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      "φ": "phicode"
+    },
+    "languageIds": {
+      "phicode": "phicode"
+    }
+  }
+}

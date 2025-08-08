@@ -1,0 +1,124 @@
+{
+  "name": "phicode",
+  "displayName": "(φ) PHICODE",
+  "description": "Symbolic language support for (φ) PHICODE (.φ files) - Python with symbolic syntax",
+  "version": "1.1.0",
+  "publisher": "banes-lab",
+  "main": "./out/extension.js",
+  "scripts": {
+    "build": "vsce package",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Snippets"
+  ],
+  "keywords": [
+    "python",
+    "phicode",
+    "symbolic",
+    "unicode",
+    "phi"
+  ],
+  "activationEvents": [
+    "onLanguage:phicode"
+  ],
+  "capabilities": {
+  "virtualWorkspaces": true,
+  "copilot": true
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "phicode",
+        "aliases": [
+          "PHICODE",
+          "phicode",
+          "Phi Code"
+        ],
+        "extensions": [
+          ".φ"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/phicode-light.png",
+          "dark": "./icons/phicode-dark.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "phicode",
+        "scopeName": "source.phicode",
+        "path": "./syntaxes/phicode.tmLanguage.json"
+      }
+    ],
+        "iconThemes": [
+      {
+        "id": "phicode-icons",
+        "label": "PHICODE File Icons",
+        "path": "./icons/phicode-icon-theme.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "phicode",
+        "path": "./snippets/phicode.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "phicode.convertPythonToPhicode",
+        "title": "Convert Python to Phicode",
+        "category": "Phicode"
+      },
+      {
+        "command": "phicode.convertPhicodeToPython",
+        "title": "Convert Phicode to Python",
+        "category": "Phicode"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceExtname == .py",
+          "command": "phicode.convertPythonToPhicode",
+          "group": "1_modification"
+        },
+        {
+          "when": "resourceExtname == .φ",
+          "command": "phicode.convertPhicodeToPython",
+          "group": "1_modification"
+        }
+      ]
+    },
+    "configurationDefaults": {
+      "[phicode]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.trimAutoWhitespace": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.autoIndent": "full",
+        "editor.formatOnType": true
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Varietyz/phicode-vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/Varietyz/phicode-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/Varietyz/phicode-vscode-extension#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.0"
+  }
+}
