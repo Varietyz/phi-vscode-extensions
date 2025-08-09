@@ -1,6 +1,6 @@
 # (φ) PHICODE - Symbolic Python Extension for VSCode
 
-![PHICODE Logo](icons/phicode-light.png)
+![PHICODE Logo](phicode-extension/icons/phicode-light.png)
 
 A comprehensive Visual Studio Code extension that transforms Python development with Unicode symbolic operators. Write elegant, mathematically expressive code in PHICODE (`.φ` files) with full IDE support.
 
