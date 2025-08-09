@@ -1,3 +1,5 @@
+<img src="https://banes-lab.com/assets/images/banes_lab/700px_Main_Animated.gif" width="70" /> 
+
 # (φ) PHICODE - Symbolic Python Extension for VSCode
 
 ![PHICODE Logo](icons/phicode-light.png)
