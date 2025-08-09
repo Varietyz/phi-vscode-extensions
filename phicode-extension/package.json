@@ -2,7 +2,7 @@
   "name": "phicode",
   "displayName": "(φ) PHICODE",
   "description": "Symbolic language support for (φ) PHICODE (.φ files) - Python with symbolic syntax",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "banes-lab",
   "main": "./out/extension.js",
   "scripts": {
@@ -158,6 +158,26 @@
           "type": "boolean",
           "default": true,
           "description": "Show hover hints for PHICODE symbols"
+        },
+        "phicode.formatting.spaceAroundOperators": {
+          "type": "boolean",
+          "default": true,
+          "description": "Add spaces around operators"
+        },
+        "phicode.formatting.spaceAfterCommas": {
+          "type": "boolean", 
+          "default": true,
+          "description": "Add spaces after commas"
+        },
+        "phicode.formatting.blankLinesAroundClasses": {
+          "type": "number",
+          "default": 2,
+          "description": "Number of blank lines around class definitions"
+        },
+        "phicode.formatting.blankLinesAroundFunctions": {
+          "type": "number",
+          "default": 1,
+          "description": "Number of blank lines around function definitions"
         }
       }
     }

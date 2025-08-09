@@ -1,7 +1,10 @@
 import * as vscode from 'vscode';
 import { pythonToPhicode } from './extension';
 
-// --- Shared utility ---
+/**
+ * Simple fuzzy matching:
+ * Returns true if the keyword starts with or contains the input substring (case-insensitive).
+ */
 function fuzzyMatch(input: string, keyword: string): boolean {
     if (!input) return false;
     const lowerInput = input.toLowerCase();
@@ -15,17 +18,30 @@ export class PhicodeInlineSuggestions implements vscode.InlineCompletionItemProv
         position: vscode.Position
     ): Promise<vscode.InlineCompletionList> {
         const items: vscode.InlineCompletionItem[] = [];
-        const linePrefix = document.lineAt(position).text.substring(0, position.character);
-        const lastWord = linePrefix.trim().split(/\s+/).pop() || '';
 
-        // Suggest PHICODE symbols early with fuzzy matching
+        // Extract the current line prefix up to the cursor position
+        const linePrefix = document.lineAt(position).text.substring(0, position.character);
+
+        // Extract last word token before the cursor for fuzzy matching
+        const tokens = linePrefix.trim().split(/\s+/);
+        const lastWord = tokens.length > 0 ? tokens[tokens.length - 1] : '';
+
+        if (!lastWord) {
+            return new vscode.InlineCompletionList([]);
+        }
+
+        // Generate suggestions for PHICODE symbols matching the last word fuzzily
         for (const [pythonKeyword, phicodeSymbol] of Object.entries(pythonToPhicode)) {
             if (fuzzyMatch(lastWord, pythonKeyword)) {
-                const start = position.translate(0, -lastWord.length);
+                const startPos = position.translate(0, -lastWord.length);
+                const range = new vscode.Range(startPos, position);
                 const item = new vscode.InlineCompletionItem(
                     phicodeSymbol,
-                    new vscode.Range(start, position),
-                    { title: 'Use PHICODE symbol', command: 'editor.action.triggerSuggest' }
+                    range,
+                    {
+                        title: 'Use PHICODE symbol',
+                        command: 'editor.action.triggerSuggest'
+                    }
                 );
                 items.push(item);
             }
