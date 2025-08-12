@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "PHIPROMPT",
+  "scopeName": "source.phiprompt",
+  "fileTypes": ["φp", "phip", "phicode"],
+  "patterns": [
+    {"include": "#framework-headers"},
+    {"include": "#activation-module"},
+    {"include": "#framework-definition"},
+    {"include": "#pipeline-structure"},
+    {"include": "#greek-symbols"},
+    {"include": "#logical-operators"},
+    {"include": "#emoji-flags"},
+    {"include": "#domain-elements"},
+    {"include": "#format-controls"},
+    {"include": "#meta-level"},
+    {"include": "#strings-comments"}
+  ],
+  "repository": {
+    "framework-headers": {
+      "patterns": [{
+        "match": "##\\s*\\[(\\w+(?:\\.\\w+)*)\\.(INPUT|ACTIVATE_MODULE)\\]",
+        "name": "markup.heading.phiprompt",
+        "captures": {
+          "1": {"name": "entity.name.type.class.python"},
+          "2": {"name": "keyword.control.directive.php"}
+        }
+      }]
+    },
+    "activation-module": {
+      "patterns": [{
+        "match": "(activate\\.Φ)\\s*(=)\\s*(∀)\\s*\\(([^)]+)\\)\\s*(→)\\s*(ALWAYS)\\s*(\\{)",
+        "name": "meta.activation.phiprompt",
+        "captures": {
+          "1": {"name": "storage.type.function.js"},
+          "2": {"name": "keyword.operator.assignment.js"},
+          "3": {"name": "keyword.operator.logical.php"},
+          "4": {"name": "variable.parameter.function.js"},
+          "5": {"name": "keyword.operator.arrow.php"},
+          "6": {"name": "constant.language.js"},
+          "7": {"name": "punctuation.definition.block.js"}
+        }
+      }]
+    },
+    "framework-definition": {
+      "patterns": [{
+        "match": "(Φ)\\.(\\w+)\\s*(=)\\s*(\\{)",
+        "captures": {
+          "1": {"name": "support.type.class.js"},
+          "2": {"name": "entity.name.function.js"},
+          "3": {"name": "keyword.operator.assignment.js"},
+          "4": {"name": "punctuation.definition.block.js"}
+        }
+      }]
+    },
+    "pipeline-structure": {
+      "patterns": [
+        {
+          "match": "(→)\\s*([ξεαρωφκσδπβγτιυχ])\\s*:",
+          "captures": {
+            "1": {"name": "keyword.operator.arrow.php"},
+            "2": {"name": "support.class.greek.phiprompt"}
+          }
+        },
+        {
+          "match": "([\\w_]+)\\s*(→)\\s*([\\w_]+)\\s*(→)\\s*([\\w_]+)",
+          "captures": {
+            "1": {"name": "variable.other.php"},
+            "2": {"name": "keyword.operator.arrow.php"},
+            "3": {"name": "entity.name.function.php"},
+            "4": {"name": "keyword.operator.arrow.php"},
+            "5": {"name": "variable.other.php"}
+          }
+        }
+      ]
+    },
+    "greek-symbols": {
+      "patterns": [{
+        "match": "\\b([ΦΨρνακμλξεπωχυℜΠΩΛΘΡΕΝΤΟαβγδζηθιστφψΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ])\\b",
+        "name": "support.class.greek.phiprompt"
+      }]
+    },
+    "logical-operators": {
+      "patterns": [{
+        "match": "(∧|∪|⊕|;|∨|¬|≡|∈|∉|∅|∀|∃|[><≥≤≈≫≪])",
+        "name": "keyword.operator.logical.php"
+      }]
+    },
+    "emoji-flags": {
+      "patterns": [{
+        "match": "([🌀🧱🎭🧪⚠🔍📝🔗📊⚡🔄🏗️🔧⚙️🎨📖🎪✨💰📈🎯🔬🌟🛡️🧠💭🔐])",
+        "name": "constant.character.emoji.phiprompt"
+      }]
+    },
+    "domain-elements": {
+      "patterns": [{
+        "match": "\\b([A-Z])\\.(\\w+)",
+        "captures": {
+          "1": {"name": "variable.other.php"},
+          "2": {"name": "variable.other.property.php"}
+        }
+      }]
+    },
+    "format-controls": {
+      "patterns": [{
+        "match": "\\b([FT])\\s*(→)\\s*(\\w+)",
+        "captures": {
+          "1": {"name": "keyword.control.php"},
+          "2": {"name": "keyword.operator.arrow.php"},
+          "3": {"name": "constant.language.php"}
+        }
+      }]
+    },
+    "meta-level": {
+      "patterns": [{
+        "match": "(⇑)\\.(\\w+)",
+        "captures": {
+          "1": {"name": "keyword.control.php"},
+          "2": {"name": "entity.name.type.class.php"}
+        }
+      }]
+    },
+    "strings-comments": {
+      "patterns": [
+        {
+          "match": "/([^/]+)/g",
+          "name": "string.regexp.js"
+        },
+        {
+          "match": "\"([^\"]+)\"",
+          "name": "string.quoted.double.php"
+        },
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.js"
+        }
+      ]
+    }
+  }
+}

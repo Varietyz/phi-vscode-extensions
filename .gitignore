@@ -405,3 +405,9 @@ content_extract.py
 all_contents.txt
 /phicode-extension/out
 /phicode-extension/out
+gen°all_contents.txt
+GEN°README.md
+*.vsix
+/TO-DO
+update_readme.py
+/phiprompt-extension/out

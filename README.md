@@ -152,7 +152,7 @@ filter_func = λ x: x.age > 18 ∧ x.score ≥ 85 ∨ x.is_premium ≡ ✓
 
 ## 🐛 Troubleshooting
 
-### Common Issues
+### Potential Issue(s)
 - **Symbols not displaying**: Install a Unicode-compatible font (Fira Code recommended)
 - **Linting not working**: Check that file extension is `.φ` and language mode is "phicode"
 - **Conversion failed**: Ensure active editor contains valid Python/PHICODE syntax

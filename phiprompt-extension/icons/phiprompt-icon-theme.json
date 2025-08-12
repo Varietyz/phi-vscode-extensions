@@ -1,0 +1,36 @@
+{
+  "iconDefinitions": {
+    "phicode": {
+      "iconPath": "./icons/phiprompt-file-icon.svg"
+    },
+    "_file_phiprompt_copilot": {
+      "iconPath": "./icons/phiprompt-file-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    ".φp": "phicode",
+    ".φc": "_file_phiprompt_copilot"
+  },
+  "languageIds": {
+    "phiprompt": "phicode",
+    "phiprompt-copilot-config": "_file_phiprompt_copilot"
+  },
+  "light": {
+    "fileExtensions": {
+      ".φp": "phicode",
+      ".φc": "_file_phiprompt_copilot"
+    }
+  },
+  "dark": {
+    "fileExtensions": {
+      ".φp": "phicode",
+      ".φc": "_file_phiprompt_copilot"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      ".φp": "phicode",
+      ".φc": "_file_phiprompt_copilot"
+    }
+  }
+}

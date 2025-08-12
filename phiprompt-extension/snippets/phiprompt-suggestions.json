@@ -1,0 +1,208 @@
+{
+  "framework_templates": {
+    "full_pipeline": {
+      "trigger": ["Φ =", "phi =", "pipeline", "framework"],
+      "priority": 8,
+      "content": "Φ = {\n    [SYSTEM_OPTIMIZER_MODULE]\n    Ψ.optimizer = {\n        ρ.filter: {\n            dup.patterns: /(\\{[^}]*\\})\\s*\\1+/g,\n            rep.symbols: /(∀|∃|∈|∧|∨)\\s+\\1+/g,\n            overconfidence.patterns: /(guarantee|certain|always|never|complete|perfect|absolute)/gi\n        },\n        ν.normalizer: {\n            entity.std: \"entity\",\n            attr.std: \"attr\",\n            val.std: \"val\",\n            rel.std: \"rel\"\n        },\n        α.validator: {\n            conflicts: {\"∃\": \"∃\", \"¬\": \"¬\", \"→\": \"→\"},\n            overconfidence_claims: {\n                pattern: /(guarantee|certain|always|never)/gi,\n                action: \"REPLACE_WITH_PROBABILISTIC_LANGUAGE\",\n                flag: \"⚠(overconfidence_claim_requires_qualification)\"\n            }\n        }\n    },\n    [ℜ.FORENSICS]\n    ℜ.forensics = {\n        causal.chain.model = ∀ evidence.artifact → backward.trace(effect → cause.hypothesis) ∧ ⚠(gaps.possible),\n        triangulation.loop = ∀ hypothesis → multiple.validation.vectors ∧ 🧪(verification.requirement),\n        anomaly.detection = statistical.baseline → deviation.identification ∧ 🔍(pattern.recognition)\n    },\n    [Π.COMPILE]\n    Π.compile = ∀ input.text → symbolic.phicode.probabilistic ⟹ {\n        ξ.domain = context.classification ∧ challenge.detect ∧ ⚠,\n        ε.entity = identification → extraction ∧ 🌀.analyze ∧ 🔍,\n        π.pipeline = adaptive.sequence.best_effort ∧ uncertainty.explicit\n    }\n}",
+      "description": "Strong foundation"
+    },
+    "basic_pipeline": {
+      "trigger": ["basic", "simple", "starter"],
+      "priority": 8,
+      "content": "Φ = {\n    Ψ: {\n        ρ: {filter: /dup|overconf|loops/g},\n        ν: [entity,attr,val,rel],\n        α: [conflicts,claims,novelty] ∧ ⚠\n    },\n    ℜ: {\n        models: [causal,triangulation,anomaly],\n        principles: [evidence,falsify,docs] ∧ 🧪\n    },\n    Π: {\n        compile: ξ→ε→α→ν→ρ→χ→ω ∧ ⚠(best_effort)\n    }\n}",
+      "description": "Simplified PHICODE pipeline for quick starts"
+    },
+    "phicode_pipeline": {
+      "trigger": ["PHICODE_FRAMEWORK", "phi =", "pipeline", "framework"],
+      "priority": 7,
+      "content": "##[ACTIVE_PIPELINE]\nΦ = {\n    Ψ : {\n        ρ : {\n            filter : /dup|overconf|loops/g, \n            consolidator : [merge, collapse], \n            ν : [entity, attr, val, rel], \n            α : [conflicts, claims, loops, novelty], \n            μ : [abstract, fig, subj], \n            κ : [nest, vague, impl]\n        }, \n        ℜ : {\n            models : [causal, triangulation, anomaly, custody, refinement, signal, bayes, bias, scaffold], \n            principles : [evidence, falsify, docs, error], \n            domains : [criminal, digital, biomed, research, cognitive], \n            limits : [incomplete, uncertainty, observer, temporal, resources], \n            QA : [peer_review, transparency, error_rates, bias]\n        }, \n    }, \n    Π : {\n        [COMPILE]\n        Π.compile{\n            ξ : [tech, sci, biz, creative, med, edu, social, temp, spatial, quant, qual, proc, meta, cond, affect, claim], \n            ε : [infer, adapt, entities, attrs, vals, rels, assess, meta, cond, affect, claim, exec], \n            π : [ξ → ε → α → ν → ρ → χ → ω → φ → β → κ → σ → λ → μ → τ → π → δ]≡{\n                ξ : domain_analysis → context.classification ∧ challenge.detect ∧ ⚠, \n                ε : entity_ident → {people, objects, concepts, locations, events} ∧ 🌀.analyze ∧ 🔍, \n                α : attr_extract → {properties, qualities, specs, features} ∧ 🧱.map ∧ ⚠, \n                ν : value_capture → {numeric, textual, categorical, boolean, temporal} ∧ 🎭.indicators ∧ 📝, \n                ρ : rel_map → connections ∧ 🧪.validate ∧ 🔗, \n                χ : context_preserve → temporal ⊕ spatial ⊕ conditional ∧ complexity.assess ∧ ⚠, \n                ω : validate_cohere → flag(⚠ ⊕ 🔍) ∧ challenge.flags, \n                φ : feedback_calibrate → measured.response ⊕ evidence.eval ∧ limitation.explicit ∧ ⚠, \n                β : anthrop_audit → language.validate ∧ tech.accuracy.verify ∧ 🔍, \n                κ : credibility_assess → claim.verify ∧ mechanism.accuracy.check ∧ 🧪, \n                σ : symbolic_synth → elements → operators ∧ preserve.logic.flow ∧ ⚠, \n                λ : flag_integrate → embed(🌀🧱🎭🧪) ∧ best_effort, \n                μ : uncertainty_embed → confidence.levels ∧ explicit.limits, \n                τ : rel_symbolic_map → connections → operators ∧ 🔗, \n                π : phicode_gen → symbolic.rep ∧ completeness.⚠, \n                δ : code_synth → IF(ξ∈technical ∧ feasible) → implementation ∧ ⚠(quality)\n            }, \n            ω : [structure, internal, external, matrix, narrative, flags], \n            χ : [domain, entities, vals, missing, rels, enthusiasm, evidence, meta, cond, affect, claim, exec], \n            υ : [entity, attr, val, context, rels, performance, meta, cond, affect, claim], \n            ℜ : [claims, comparisons, confidence, limits, meta, cond, affect, performance, exec], \n            σ : [completeness, quality, realistic]\n        }, \n        [RUN]\n        Π.run{\n            ι : [consistency, mapping, challenge], \n            σ : [extract, compile, forensics, optimize, decompress, meta, generate, synthesize], \n            γ : symbolic_attempted, \n            δ : IF code → symbolic+code ELSE narrative, \n            ν : [natural, flags, tone], \n            φ : [format, feedback, constraints]\n        }, \n        [DECOMPILE]\n        Π.decompile{\n            σ : SYMBOL_TO_TEXT, \n            τ : [convert, avoid, include, focus, maintain, preserve], \n            ι : [convert, expand, output, include, use, preserve], \n            χ : flag_explanations, \n            Ψ : [filter, normalize, validate]\n        }\n    }, \n    compliance : [overconfidence, execution, validation, empirical, anthropomorphism], \n    deploy : [phase1, phase2, phase3, continuous], \n    limits : [processing, capabilities, scope], \n    success : [goals, quality, failure_prevention], \n    meta : {\n        scaffold : [metaphor, narrative, implicature, compression], \n        distortion : [pressure, ambiguity, virality], \n        intent : [clarify, influence, conceal], \n        meaning : Δ = Σdistortions + Σrecontext, \n        validation : [scientific, political, ad, informal, lit], \n        convergence : [compression, ambiguity], \n        constraints : [preservation, distortion, validation]\n    }\n}\n\n##[ACTIVATE]\nActivate.System = ∀.input → ALWAYS{\n    ξ.classify → Ψ.filter → ℜ.analyze → Π.compile → Π.run → Π.decompile → output.narrative+flags+⚠\n}",
+      "description": "Complete PHICODE Framework v5 pipeline compact structure"
+    }
+  },
+  "section_templates": {
+    "analysis_target": {
+      "trigger": ["analysis", "target", "scope"],
+      "priority": 8,
+      "content": "## [ANALYSIS_TARGET]\n∀ entity ∈ domain → {\n    scope: ${1:define_analysis_scope},\n    constraints: ${2:specify_constraints} ∧ ⚠(limitations_acknowledged),\n    requirements: ${3:validation_criteria} ∧ 🧪(baseline_needed),\n    methodology: ${4:approach_definition} ∧ 🔍(verification_required)\n}",
+      "description": "Analysis target definition with uncertainty markers"
+    },
+    "compliance_validation": {
+      "trigger": ["compliance", "validation", "check"],
+      "priority": 7,
+      "content": "## [COMPLIANCE_VALIDATION]\nCompliance.Assessment = {\n    overconfidence.eliminated: ∀ absolute.claims → probabilistic.reformulation ∧ ⚠,\n    execution.guarantees.removed: best.effort.processing ∧ ¬recursive.loops,\n    validation.loops.replaced: single.pass.with.uncertainty.marking,\n    empirical.verification.acknowledged: ¬independent.fact.checking ∧ 📊,\n    anthropomorphism.constraints: technical.accuracy.attempted ∧ ⚠,\n    realistic.expectations: {\n        symbolic.conversion: ⚠(assessment.pending.validation.required),\n        domain.classification: ⚠(performance.untested.flexibility.acknowledged),\n        uncertainty.handling: ⚠(explicit.limitation.acknowledgment)\n    }\n}",
+      "description": "Framework compliance validation structure"
+    },
+    "forensics_module": {
+      "trigger": ["forensics", "evidence", "investigation"],
+      "priority": 7,
+      "content": "## [ℜ.FORENSICS]\nℜ.forensics = {\n    causal.chain.model = ∀ evidence.artifact → backward.trace(effect → cause.hypothesis) ∧ temporal.sequence.reconstruction ∧ 🔍(inference.dependency) ∧ ⚠(gaps.possible),\n    \n    triangulation.loop = ∀ hypothesis → multiple.validation.vectors ⟹ {\n        evidence.source.1 ∧ evidence.source.2 ∧ evidence.source.n → convergence.test(consistency) ∧ 🧪(verification.requirement) ∧ ⚠(interpretation.variable)\n    },\n    \n    validation.strategies = {\n        scientific: peer.review ∧ replication → 🧪(falsifiability.enforced),\n        empirical: baseline.comparison ∧ controlled.measurement → 📊(metrics.required),\n        logical: consistency.check ∧ inference.validation → 🔍(reasoning.dependency)\n    },\n    \n    limitations = {\n        incompleteness.principle: ∀ investigation → evidence.gaps.inevitable ∧ ⚠(reconstruction.partial),\n        uncertainty.propagation: accumulated.inference → confidence.degradation ∧ ⚠(error.amplification)\n    }\n}",
+      "description": "Forensics module with evidence analysis protocols"
+    }
+  },
+  "quantifier_patterns": {
+    "universal_basic": {
+      "trigger": ["∀", "forall", "for all"],
+      "priority": 8,
+      "content": "∀ ${1:entity} ∈ ${2:domain} → ${3:condition} ∧ ⚠(${4:scope_specified})",
+      "description": "Universal quantifier with uncertainty marking"
+    },
+    "universal_advanced": {
+      "trigger": ["∀ entity"],
+      "priority": 9,
+      "content": "∀ ${1:entity} ∈ ${2:domain} → {\n    condition: ${3:primary_constraint},\n    validation: ${4:verification_method} ∧ 🧪(${5:testing_required}),\n    exceptions: ${6:edge_cases} ∧ ⚠(${7:limitations_noted})\n}",
+      "description": "Advanced universal quantifier with structured conditions"
+    },
+    "existential_basic": {
+      "trigger": ["∃", "exists", "there exists"],
+      "priority": 8,
+      "content": "∃ ${1:instance} ∈ ${2:domain} → ${3:action_triggered} ∧ 🔍(${4:identification_method})",
+      "description": "Existential quantifier with investigation marker"
+    },
+    "existential_conditional": {
+      "trigger": ["∃ condition"],
+      "priority": 9,
+      "content": "∃ ${1:condition} ∈ ${2:context} ⟹ {\n    trigger: ${3:activation_criteria},\n    response: ${4:action_sequence} → ${5:outcome},\n    validation: ${6:verification_method} ∧ 🧪(${7:effectiveness_unverified})\n}",
+      "description": "Conditional existential with structured response"
+    }
+  },
+  "module_definitions": {
+    "psi_optimizer": {
+      "trigger": ["Ψ", "psi", "optimizer"],
+      "priority": 8,
+      "content": "Ψ.optimizer = {\n    ρ.filter: {\n        dup.patterns: /(\\{[^}]*\\})\\s*\\1+/g,\n        overconfidence.patterns: /(guarantee|certain|always|never)/gi,\n        action: \"REPLACE_WITH_PROBABILISTIC_LANGUAGE\" ∧ ⚠\n    },\n    ν.normalizer: {\n        entity.std: \"${1:entity_format}\",\n        attr.std: \"${2:attribute_format}\",\n        uncertainty.preserve: true ∧ ⚠(${3:transformation_limits})\n    },\n    α.validator: {\n        conflicts: detection ∧ resolution_attempt,\n        claims: evidence_requirement ∧ 🧪(${4:validation_needed}),\n        novelty: baseline_comparison ∧ 📊(${5:metrics_required})\n    }\n}",
+      "description": "Psi optimizer module with filtering and validation"
+    },
+    "rho_filter": {
+      "trigger": ["ρ", "rho", "filter"],
+      "priority": 7,
+      "content": "ρ.filter: {\n    dedup: unique_identifiers_only → cleaned_dataset ∧ ⚠(${1:data_quality}),\n    validation_pattern: /${2:pattern}/g → compliant_data ∧ 🔍(${3:false_positives_possible}),\n    consolidate: merge_similar_entities ∧ 🧪(${4:similarity_threshold_unverified}),\n    output: processed_data ∧ ⚠(${5:completeness_not_guaranteed})\n}",
+      "description": "Rho filter component with deduplication and validation"
+    },
+    "xi_domain": {
+      "trigger": ["ξ", "xi", "domain", "classification"],
+      "priority": 7,
+      "content": "ξ.domain.analysis → {\n    technical: {code, software, systems, algorithms} ∧ ⚠(${1:classification_confidence}),\n    scientific: {research, data, experiments, hypotheses} ∧ 🧪(${2:validation_required}),\n    business: {metrics, performance, efficiency} ∧ 📊(${3:baseline_needed}),\n    creative: {art, design, media} ∧ 📝(${4:subjective_interpretation}),\n    hybrid: ∃ multiple.membership → classify.combined ∧ 🔍(${5:disambiguation_needed}),\n    uncertainty: classification_confidence < 0.8 → ⚠(${6:manual_review_recommended})\n}",
+      "description": "Xi domain classification with uncertainty handling"
+    }
+  },
+  "challenge_flag_patterns": {
+    "metaphorical": {
+      "trigger": ["🌀", "metaphor", "abstract"],
+      "priority": 7,
+      "content": "🌀(${1:metaphorical_interpretation}) → {\n    structural.basis: ${2:concrete_elements},\n    interpretation.variance: ${3:subjective_range} ∧ ⚠(${4:ambiguity_acknowledged}),\n    extraction.method: ${5:approach} ∧ 🔍(${6:validation_subjective})\n}",
+      "description": "Metaphorical content handling with structural analysis"
+    },
+    "nested_conditional": {
+      "trigger": ["🧱", "nested", "conditional"],
+      "priority": 7,
+      "content": "🧱(${1:complex_conditional_logic}) → {\n    structure: IF ${2:condition_1} ∧ (${3:condition_2} ∨ ${4:condition_3}) → ${5:outcome},\n    clarity.requirement: explicit.structure.preferred ∧ ⚠(${6:ambiguity_risk}),\n    validation: logic.consistency.check ∧ 🔍(${7:verification_method})\n}",
+      "description": "Nested conditional logic with clarity requirements"
+    },
+    "affective_intent": {
+      "trigger": ["🎭", "affective", "emotional"],
+      "priority": 7,
+      "content": "🎭(${1:affective_considerations}) → {\n    observable.indicators: ${2:structural_markers},\n    interpretation.limits: structural.dependency ∧ ⚠(${3:subjectivity_acknowledged}),\n    analysis.scope: ${4:measurable_aspects} ∧ 🔍(${5:validation_constraints})\n}",
+      "description": "Affective content analysis with observable indicators"
+    },
+    "hypothesis_claim": {
+      "trigger": ["🧪", "hypothesis", "unverified"],
+      "priority": 7,
+      "content": "🧪(${1:unverified_claim}) → {\n    claim: ${2:assertion_statement},\n    evidence.requirement: ${3:validation_criteria},\n    testing.method: ${4:verification_approach} ∧ 📊(${5:baseline_comparison_needed}),\n    uncertainty: confidence.level < ${6:threshold} ∧ ⚠(${7:empirical_validation_required})\n}",
+      "description": "Hypothesis marking with validation requirements"
+    },
+    "uncertainty_explicit": {
+      "trigger": ["⚠", "uncertain", "warning"],
+      "priority": 8,
+      "content": "⚠(${1:uncertainty_description}) → {\n    limitation.type: ${2:constraint_category},\n    confidence.level: ${3:probability_estimate},\n    mitigation: ${4:risk_reduction_approach},\n    acknowledgment: explicit.limitation.noted ∧ realistic.expectations\n}",
+      "description": "Explicit uncertainty marking with risk assessment"
+    }
+  },
+  "transformation_patterns": {
+    "basic_arrow": {
+      "trigger": ["→", "transforms", "leads to"],
+      "priority": 6,
+      "content": "${1:input} → ${2:process} → ${3:output} ∧ ⚠(${4:transformation_assumptions})",
+      "description": "Basic transformation chain with uncertainty"
+    },
+    "conditional_implication": {
+      "trigger": ["⟹", "implies", "if then"],
+      "priority": 6,
+      "content": "${1:condition} ⟹ {\n    primary.outcome: ${2:expected_result},\n    confidence: ${3:probability_assessment} ∧ ⚠(${4:variability_factors}),\n    validation: ${5:verification_method} ∧ 🧪(${6:testing_required})\n}",
+      "description": "Conditional implication with structured outcomes"
+    },
+    "logical_conjunction": {
+      "trigger": ["∧", "and", "while"],
+      "priority": 5,
+      "content": "${1:condition_1} ∧ ${2:condition_2} → {\n    combined.effect: ${3:joint_outcome},\n    interdependency: ${4:relationship_description} ∧ 🔗(${5:connection_analysis}),\n    validation: ∀ component → individual.verification ∧ ⚠(${6:interaction_effects})\n}",
+      "description": "Logical conjunction with interdependency analysis"
+    }
+  },
+  "domain_notation_patterns": {
+    "modal_logic": {
+      "trigger": ["modal", "possibility", "necessity"],
+      "priority": 6,
+      "content": "modal.${1|pos,req|}(${2:proposition}) → {\n    assessment: ${3:evaluation_criteria},\n    constraints: ${4:limiting_factors} ∧ ⚠(${5:uncertainty_factors}),\n    implications: ${6:consequences} ∧ 🔍(${7:verification_method})\n}",
+      "description": "Modal logic operators for possibility and necessity"
+    },
+    "state_management": {
+      "trigger": ["state", "hold", "active"],
+      "priority": 6,
+      "content": "state.${1|hold,active,pending|}(${2:resource}) → {\n    condition: ${3:current_status},\n    transition: ${4:next_state_criteria},\n    monitoring: ${5:observation_method} ∧ ⚠(${6:state_uncertainty}),\n    timeout: ${7:duration_limit} ∧ 🔍(${8:boundary_conditions})\n}",
+      "description": "State management with transition criteria"
+    },
+    "data_qualifiers": {
+      "trigger": ["data", "quantitative", "qualitative"],
+      "priority": 6,
+      "content": "data.${1|quant,qual|}(${2:dataset}) → {\n    processing.method: ${3:analysis_approach},\n    quality.assessment: ${4:validation_criteria} ∧ 📊(${5:metrics_definition}),\n    interpretation: ${6:analysis_scope} ∧ ⚠(${7:accuracy_limitations})\n}",
+      "description": "Data type qualifiers with processing methods"
+    }
+  },
+  "validation_patterns": {
+    "evidence_requirement": {
+      "trigger": ["evidence", "proof", "validation"],
+      "priority": 7,
+      "content": "evidence.requirement = {\n    claim: ${1:assertion_statement},\n    support.level: ${2:evidence_strength} ∧ 📊(${3:baseline_comparison}),\n    methodology: ${4:validation_approach},\n    limitations: ${5:constraint_acknowledgment} ∧ ⚠(${6:uncertainty_factors}),\n    verification: independent.review ∧ 🧪(${7:replication_needed})\n}",
+      "description": "Evidence requirement structure with validation"
+    },
+    "baseline_comparison": {
+      "trigger": ["baseline", "comparison", "metrics"],
+      "priority": 7,
+      "content": "📊(${1:baseline_required}) → {\n    current.measurement: ${2:present_value},\n    reference.standard: ${3:comparison_benchmark},\n    methodology: ${4:measurement_approach},\n    significance: ${5:difference_assessment} ∧ ⚠(${6:statistical_limitations}),\n    interpretation: ${7:meaning_analysis} ∧ 🔍(${8:context_dependency})\n}",
+      "description": "Baseline comparison with statistical considerations"
+    },
+    "uncertainty_quantification": {
+      "trigger": ["confidence", "probability", "uncertainty"],
+      "priority": 7,
+      "content": "uncertainty.quantification = {\n    confidence.level: ${1:probability_estimate},\n    error.bounds: [${2:lower_limit}, ${3:upper_limit}],\n    methodology: ${4:assessment_approach},\n    factors: {\n        measurement.precision: ${5:instrument_accuracy} ∧ ⚠,\n        sampling.bias: ${6:selection_effects} ∧ 🔍,\n        model.assumptions: ${7:theoretical_limitations} ∧ 🧪\n    },\n    propagation: accumulated.uncertainty → ${8:combined_effect} ∧ ⚠(${9:error_amplification})\n}",
+      "description": "Comprehensive uncertainty quantification"
+    }
+  },
+  "execution_patterns": {
+    "best_effort_processing": {
+      "trigger": ["best effort", "processing", "execution"],
+      "priority": 6,
+      "content": "execution.protocol = {\n    approach: best.effort.processing ∧ ¬absolute.guarantees,\n    limitations: {\n        completeness: partial.results.possible ∧ ⚠(${1:coverage_constraints}),\n        accuracy: variable.performance ∧ ⚠(${2:reliability_factors}),\n        validation: single.pass.only ∧ ¬recursive.loops\n    },\n    output.quality: functional.attempt ∧ ⚠(${3:production_readiness_unverified}),\n    fallback: IF processing.limited → partial.output.with.explicit.limitations\n}",
+      "description": "Best effort processing with realistic limitations"
+    },
+    "single_pass_validation": {
+      "trigger": ["single pass", "validation", "no loops"],
+      "priority": 6,
+      "content": "validation.approach = {\n    method: single.pass.with.uncertainty.marking ∧ ¬recursive.loops,\n    scope: ${1:validation_criteria},\n    limitations: {\n        improvement.cycles: not.supported ∧ ⚠(${2:no_iterative_refinement}),\n        completeness: best.effort.only ∧ ⚠(${3:partial_coverage_possible}),\n        accuracy: initial.assessment.only ∧ 🧪(${4:verification_external_required})\n    },\n    output: validated.content ∧ explicit.uncertainty.marking\n}",
+      "description": "Single-pass validation without recursive improvement"
+    }
+  },
+  "compliance_patterns": {
+    "overconfidence_elimination": {
+      "trigger": ["overconfidence", "absolute claims", "certainty"],
+      "priority": 8,
+      "content": "overconfidence.elimination = {\n    detection: /(guarantee|certain|always|never|complete|perfect|absolute)/gi,\n    replacement: probabilistic.language ∧ uncertainty.acknowledgment,\n    examples: {\n        \"guarantee\" → \"attempt.with.variable.success\" ∧ ⚠,\n        \"always\" → \"typically\" ∧ ⚠(${1:exceptions_possible}),\n        \"perfect\" → \"optimized.within.constraints\" ∧ ⚠(${2:limitations_acknowledged})\n    },\n    validation: ∀ absolute.claim → reformulation.required ∧ uncertainty.injection\n}",
+      "description": "Overconfidence elimination with probabilistic reformulation"
+    },
+    "anthropomorphism_control": {
+      "trigger": ["anthropomorphism", "cognitive", "understanding"],
+      "priority": 7,
+      "content": "anthropomorphism.constraints = {\n    forbidden.claims: {\n        consciousness: \"awareness\" → \"pattern.recognition\" ∧ ⚠,\n        understanding: \"comprehension\" → \"information.processing\" ∧ ⚠,\n        intention: \"wants.to\" → \"designed.to\" ∧ ⚠,\n        emotion: \"feels\" → \"indicates\" ∧ ⚠\n    },\n    technical.accuracy: {\n        mechanism.description: computational.processes.only,\n        capability.boundaries: information.processing ≠ consciousness,\n        function.clarity: systematic.procedures ≠ cognitive.abilities ∧ ⚠\n    },\n    validation: language.precision ∧ mechanistic.descriptions.preferred\n}",
+      "description": "Anthropomorphism prevention with technical accuracy"
+    }
+  }
+}

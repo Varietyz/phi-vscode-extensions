@@ -1,0 +1,458 @@
+{
+  "name": "phiprompt-extension",
+  "displayName": "PHIPROMPT - Complete Framework Navigation & Validation",
+  "description": "Enhanced Φ framework support with full hierarchical navigation, breadcrumb trails, framework validation, and comprehensive symbolic language integration",
+  "version": "2.0.3",
+  "publisher": "phiprompt",
+  "main": "./out/extension.js",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Snippets",
+    "Linters",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "phiprompt",
+    "phicode",
+    "symbolic",
+    "mathematical",
+    "ai",
+    "prompts",
+    "unicode",
+    "logic",
+    "phi",
+    "greek",
+    "framework",
+    "pipeline",
+    "forensics",
+    "optimizer",
+    "processor",
+    "navigation",
+    "breadcrumb",
+    "validation",
+    "hierarchy",
+    "submodules"
+  ],
+  "activationEvents": [
+    "onLanguage:phiprompt"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "copilot": true
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "phiprompt",
+        "aliases": [
+          "PHIPROMPT",
+          "phiprompt",
+          "PHICODE",
+          "Phi Prompt",
+          "Symbolic Prompt"
+        ],
+        "extensions": [
+          ".φp",
+          ".phip",
+          ".phicode"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/phiprompt-dark.png",
+          "dark": "./icons/phiprompt-light.png"
+        }
+      },
+      {
+        "id": "phiprompt-copilot-config",
+        "aliases": [
+          "PHIPROMPT Copilot Config",
+          "phiprompt-copilot-config",
+          "PHICODE Copilot Config",
+          "Phi Prompt Copilot Config"
+        ],
+        "extensions": [
+          ".φc"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/phiprompt-light.png",
+          "dark": "./icons/phiprompt-dark.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "phiprompt",
+        "scopeName": "source.phiprompt",
+        "path": "./syntaxes/phiprompt.tmLanguage.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "phiprompt-icons",
+        "label": "PHIPROMPT File Icons",
+        "path": "./icons/phiprompt-icon-theme.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "phiprompt",
+        "path": "./snippets/phiprompt.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "phiprompt.convertToText",
+        "title": "Convert Symbols to Natural Language",
+        "category": "PHIPROMPT"
+      },
+      {
+        "command": "phiprompt.convertFromText", 
+        "title": "Convert Text to PHICODE Symbols",
+        "category": "PHIPROMPT"
+      },
+      {
+        "command": "phiprompt.insertSymbol",
+        "title": "Insert Symbol from Complete Library",
+        "category": "PHIPROMPT"
+      },
+      {
+        "command": "phiprompt.showTutorial",
+        "title": "Show Complete Symbol Reference & Tutorial",
+        "category": "PHIPROMPT"
+      },
+      {
+        "command": "phiprompt.validateFramework",
+        "title": "Validate Framework Compliance & Structure",
+        "category": "PHIPROMPT",
+        "icon": "$(check)"
+      },
+      {
+        "command": "phiprompt.insertPhiPipeline",
+        "title": "Insert Complete Φ Pipeline Template",
+        "category": "PHIPROMPT",
+        "icon": "$(add)"
+      },
+      {
+        "command": "phiprompt.analyzeComplexity",
+        "title": "Analyze Framework Complexity & Patterns",
+        "category": "PHIPROMPT",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "phiprompt.generateGreekModule",
+        "title": "Generate Greek Framework Module Template",
+        "category": "PHIPROMPT",
+        "icon": "$(symbol-class)"
+      },
+      {
+        "command": "phiprompt.navigateToSection",
+        "title": "Navigate to Framework Section/Module",
+        "category": "PHIPROMPT",
+        "icon": "$(symbol-namespace)"
+      },
+      {
+        "command": "phiprompt.generateSymbolMapping",
+        "title": "Generate Used Symbols Documentation",
+        "category": "PHIPROMPT",
+        "icon": "$(book)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.convertToText",
+          "group": "phiprompt@1"
+        },
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.convertFromText",
+          "group": "phiprompt@2"
+        },
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.validateFramework",
+          "group": "phiprompt@3"
+        },
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.navigateToSection",
+          "group": "navigation@1"
+        },
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.analyzeComplexity",
+          "group": "navigation@2"
+        }
+      ],
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .φp",
+          "command": "phiprompt.showTutorial",
+          "group": "phiprompt@1"
+        },
+        {
+          "when": "resourceExtname == .φp",
+          "command": "phiprompt.analyzeComplexity",
+          "group": "phiprompt@2"
+        }
+      ],
+      "editor/title": [
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.validateFramework",
+          "group": "navigation@1"
+        },
+        {
+          "when": "editorLangId == phiprompt",
+          "command": "phiprompt.navigateToSection",
+          "group": "navigation@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "phiprompt.convertToText",
+          "when": "editorLangId == phiprompt"
+        },
+        {
+          "command": "phiprompt.convertFromText",
+          "when": "editorLangId == phiprompt"
+        },
+        {
+          "command": "phiprompt.validateFramework",
+          "when": "editorLangId == phiprompt"
+        },
+        {
+          "command": "phiprompt.analyzeComplexity",
+          "when": "editorLangId == phiprompt"
+        },
+        {
+          "command": "phiprompt.navigateToSection",
+          "when": "editorLangId == phiprompt"
+        },
+        {
+          "command": "phiprompt.generateSymbolMapping",
+          "when": "editorLangId == phiprompt"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "phiprompt.convertToText",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t",
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      },
+      {
+        "command": "phiprompt.convertFromText",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s", 
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      },
+      {
+        "command": "phiprompt.insertSymbol",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i",
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      },
+      {
+        "command": "phiprompt.validateFramework",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      },
+      {
+        "command": "phiprompt.navigateToSection",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g",
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      },
+      {
+        "command": "phiprompt.insertPhiPipeline",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      },
+      {
+        "command": "phiprompt.generateSymbolMapping",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorTextFocus && editorLangId == phiprompt"
+      }
+    ],
+    "configurationDefaults": {
+      "[phiprompt]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.autoIndent": "full",
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": false,
+          "strings": false
+        },
+        "editor.suggestOnTriggerCharacters": true,
+        "editor.acceptSuggestionOnEnter": "on",
+        "editor.snippetSuggestions": "top",
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "breadcrumbs.enabled": true,
+        "breadcrumbs.showKeys": true,
+        "breadcrumbs.showSymbols": true
+      }
+    },
+    "configuration": {
+      "title": "PHIPROMPT Framework",
+      "properties": {
+        "phiprompt.autoValidation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically validate framework compliance on save"
+        },
+        "phiprompt.showBreadcrumbs": {
+          "type": "boolean", 
+          "default": true,
+          "description": "Show enhanced breadcrumb navigation for framework hierarchy"
+        },
+        "phiprompt.enableSubmoduleNavigation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable navigation to submodules (ν.preprocess, μ.input_collection, etc.)"
+        },
+        "phiprompt.validatePipelineSequences": {
+          "type": "boolean",
+          "default": true,
+          "description": "Validate complete pipeline sequences (ξ→ε→α→ρ→ω→φ→κ→σ→δ)"
+        },
+        "phiprompt.highlightUncertaintyFlags": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight uncertainty flags (⚠, 🔍, 🌀, 🧱, etc.) with special formatting"
+        },
+        "phiprompt.enableFrameworkSuggestions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Provide intelligent framework-aware auto-completion suggestions"
+        },
+        "phiprompt.showComplexityMetrics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Display framework complexity metrics in status bar"
+        },
+        "phiprompt.enforceOutputSpecifications": {
+          "type": "boolean",
+          "default": false,
+          "description": "Require output specifications (F → format, T → tone) in all frameworks"
+        },
+        "phiprompt.maxBreadcrumbDepth": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Maximum depth for breadcrumb navigation hierarchy"
+        },
+        "phiprompt.enableAIInterpretation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AI-powered real-time symbol interpretation and suggestions"
+        },
+        "phiprompt.frameworkValidation": {
+          "type": "string",
+          "default": "strict",
+          "enum": ["disabled", "lenient", "strict"],
+          "enumDescriptions": [
+            "Disable framework compliance validation",
+            "Show warnings for framework violations", 
+            "Show errors for framework violations"
+          ],
+          "description": "PHICODE framework compliance validation level"
+        },
+        "phiprompt.symbolCompletionMode": {
+          "type": "string",
+          "default": "intelligent",
+          "enum": ["basic", "intelligent", "ai-powered"],
+          "enumDescriptions": [
+            "Basic symbol completions only",
+            "Context-aware intelligent completions",
+            "AI-powered contextual suggestions with Greek framework support"
+          ],
+          "description": "Symbol completion behavior and intelligence level"
+        },
+        "phiprompt.showHoverDocumentation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show detailed documentation on symbol hover including Greek modules"
+        },
+        "phiprompt.enableGreekModuleValidation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable validation of Greek framework modules (Φ, Ψ, ℜ, Π, etc.)"
+        },
+        "phiprompt.uncertaintyThreshold": {
+          "type": "number",
+          "default": 0.2,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Minimum ratio of uncertainty markers (⚠, 🧪) to statements for compliance"
+        },
+        "phiprompt.enableComplexityAnalysis": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic complexity analysis and suggestions"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "build": "npm run compile && npm run package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.0",
+    "vsce": "^2.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Varietyz/vscode-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Varietyz/vscode-extension/issues"
+  },
+  "homepage": "https://github.com/Varietyz/vscode-extension#readme",
+  "license": "MIT",
+  "icon": "icons/phiprompt-dark.png",
+  "galleryBanner": {
+    "color": "#667eea",
+    "theme": "dark"
+  },
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/Framework-PHIPROMPT-blue",
+      "href": "https://github.com/Varietyz/vscode-extension",
+      "description": "Φ Extensions"
+    }
+  ]
+}

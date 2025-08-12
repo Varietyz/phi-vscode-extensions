@@ -1,0 +1,316 @@
+{
+  "Framework Section": {
+    "prefix": "section",
+    "body": [
+      "## [${1:SECTION_NAME}]",
+      "$0"
+    ],
+    "description": "Create a new framework section header"
+  },
+  
+  "Phi Pipeline": {
+    "prefix": "phi",
+    "body": [
+      "Φ = {",
+      "    Ψ: {",
+      "        ρ: {filter: /dup|overconf|loops/g, consolidator: [merge,collapse]},",
+      "        ν: [entity,attr,val,rel], α: [conflicts,claims,loops,novelty],",
+      "        μ: [abstract,fig,subj], κ: [nest,vague,impl]",
+      "    },",
+      "    ℜ: {", 
+      "        models: [causal,triangulation,anomaly,custody,refinement],",
+      "        principles: [evidence,falsify,docs,error]",
+      "    },",
+      "    Π: {",
+      "        compile: { ξ→ε→α→ν→ρ→χ→ω→φ→β→κ→σ→λ→μ→τ→π→δ }",
+      "    }",
+      "}",
+      "$0"
+    ],
+    "description": "Complete Φ pipeline framework definition"
+  },
+
+  "Greek Module Definition": {
+    "prefix": "module",
+    "body": [
+      "${1|Ψ,ρ,ν,α,κ,μ,ℜ,Π|}.${2:property} = {",
+      "    $0",
+      "}"
+    ],
+    "description": "Define a Greek letter module with properties"
+  },
+
+  "Challenge Flag with Explanation": {
+    "prefix": "flag",
+    "body": [
+      "${1|🌀,🧱,🎭,🧪,⚡,🔄,📊,⚠,🔍,📝,🔗|}(${2:explanation})"
+    ],
+    "description": "Insert challenge flag with explanation"
+  },
+
+  "Universal Quantifier": {
+    "prefix": "forall",
+    "body": [
+      "∀ ${1:variable} ∈ ${2:domain} → ${3:condition}"
+    ],
+    "description": "Universal quantifier pattern: for all elements"
+  },
+
+  "Existential Quantifier": {
+    "prefix": "exists",
+    "body": [
+      "∃ ${1:variable} ∈ ${2:domain} → ${3:condition}"
+    ],
+    "description": "Existential quantifier pattern: there exists"
+  },
+
+  "Logical Implication": {
+    "prefix": "implies",
+    "body": [
+      "${1:condition} ⟹ ${2:consequence}"
+    ],
+    "description": "Strong logical implication"
+  },
+
+  "Transformation Chain": {
+    "prefix": "transform",
+    "body": [
+      "${1:input} → ${2:process} → ${3:output}"
+    ],
+    "description": "Transformation chain with arrows"
+  },
+
+  "Conditional Logic": {
+    "prefix": "if",
+    "body": [
+      "🧱(${1:condition1} ∧ ${2:condition2}) → ${3:result}"
+    ],
+    "description": "Complex conditional with nested flag"
+  },
+
+  "Domain Notation": {
+    "prefix": "domain",
+    "body": [
+      "${1|modal,state,data,meta,flag,link|}.${2:property}"
+    ],
+    "description": "Domain notation pattern"
+  },
+
+  "Set Membership": {
+    "prefix": "in",
+    "body": [
+      "${1:element} ∈ ${2:set}"
+    ],
+    "description": "Set membership notation"
+  },
+
+  "Logical AND": {
+    "prefix": "and",
+    "body": [
+      "${1:condition1} ∧ ${2:condition2}"
+    ],
+    "description": "Logical AND operation"
+  },
+
+  "Logical OR": {
+    "prefix": "or", 
+    "body": [
+      "${1:condition1} ∨ ${2:condition2}"
+    ],
+    "description": "Logical OR operation"
+  },
+
+  "Uncertainty Marker": {
+    "prefix": "uncertain",
+    "body": [
+      "${1:statement} ⚠(${2:uncertainty_reason})"
+    ],
+    "description": "Mark statement with explicit uncertainty"
+  },
+
+  "Hypothesis Flag": {
+    "prefix": "hypothesis",
+    "body": [
+      "🧪(${1:unverified_claim}) → ${2:action}"
+    ],
+    "description": "Mark unverified claim or hypothesis"
+  },
+
+  "Metaphor Flag": {
+    "prefix": "metaphor",
+    "body": [
+      "${1:concept} 🌀(${2:metaphorical_description})"
+    ],
+    "description": "Mark metaphorical or ambiguous content"
+  },
+
+  "Affective Flag": {
+    "prefix": "emotion",
+    "body": [
+      "${1:content} 🎭(${2:emotional_tone})"
+    ],
+    "description": "Mark affective intent or emotional tone"
+  },
+
+  "Complexity Flag": {
+    "prefix": "complex",
+    "body": [
+      "⚡(${1:complex_processing_required}) ${2:content}"
+    ],
+    "description": "Mark high complexity content"
+  },
+
+  "Entity Definition": {
+    "prefix": "entity",
+    "body": [
+      "${1:entity_name} = {",
+      "    type: ${2:entity_type},",
+      "    attributes: [${3:attr1}, ${4:attr2}],",
+      "    domain: ${5:domain_name}",
+      "}"
+    ],
+    "description": "Define an entity with attributes"
+  },
+
+  "Validation Rule": {
+    "prefix": "validate",
+    "body": [
+      "α.validate: ${1:input} → {",
+      "    ∀ ${2:item} ∈ ${1:input} → ${3:validation_condition}",
+      "    ⚠(${4:edge_cases})",
+      "}"
+    ],
+    "description": "Create validation rule with universal quantifier"
+  },
+
+  "Filter Operation": {
+    "prefix": "filter",
+    "body": [
+      "ρ.filter: ${1:dataset} → {",
+      "    remove: [duplicates, ${2:unwanted_items}],",
+      "    keep: ${3:criteria}",
+      "}"
+    ],
+    "description": "Define filter operation with removal and retention criteria"
+  },
+
+  "Analysis Phase": {
+    "prefix": "phase",
+    "body": [
+      "phase.${1:number}: ${2:description} → {",
+      "    input: ${3:input_data},",
+      "    process: ${4:processing_steps},",
+      "    output: ${5:expected_output},",
+      "    flags: [${6:challenge_flags}]",
+      "}"
+    ],
+    "description": "Define analysis phase with input/process/output"
+  },
+
+  "Forensic Analysis": {
+    "prefix": "forensic",
+    "body": [
+      "ℜ.analyze: ${1:evidence} → {",
+      "    method: ${2|causal,triangulation,anomaly,bias|},",
+      "    confidence: ${3:level} ⚠(${4:limitations}),",
+      "    conclusion: ${5:findings}",
+      "}"
+    ],
+    "description": "Forensic analysis with method and confidence"
+  },
+
+  "Truth Assignment": {
+    "prefix": "truth",
+    "body": [
+      "${1:statement} = ${2|⊤,⊥,⚠|} // ${3:justification}"
+    ],
+    "description": "Assign truth value with justification"
+  },
+
+  "Approximate Equality": {
+    "prefix": "approx",
+    "body": [
+      "${1:value1} ≈ ${2:value2} ⚠(${3:tolerance_or_uncertainty})"
+    ],
+    "description": "Approximate equality with uncertainty marker"
+  },
+
+  "Modal Logic": {
+    "prefix": "modal",
+    "body": [
+      "modal.${1|pos,req|}(${2:proposition}) → ${3:consequence}"
+    ],
+    "description": "Modal logic for possibility or necessity"
+  },
+
+  "State Management": {
+    "prefix": "state",
+    "body": [
+      "state.${1|hold,active,pending|}(${2:resource}) → ${3:next_action}"
+    ],
+    "description": "State management operation"
+  },
+
+  "Data Type Qualifier": {
+    "prefix": "data",
+    "body": [
+      "data.${1|quant,qual|}(${2:dataset}) → ${3:processing_method}"
+    ],
+    "description": "Qualify data as quantitative or qualitative"
+  },
+
+  "Relationship Link": {
+    "prefix": "link",
+    "body": [
+      "${1:entity1} 🔗 ${2:entity2} // link.rel(${3:relationship_type})"
+    ],
+    "description": "Link entities with relationship type"
+  },
+
+  "Investigation Required": {
+    "prefix": "investigate",
+    "body": [
+      "🔍(${1:investigation_needed}) {",
+      "    scope: ${2:investigation_scope},",
+      "    method: ${3:investigation_method},",
+      "    timeline: ${4:timeframe}",
+      "}"
+    ],
+    "description": "Mark content requiring investigation"
+  },
+
+  "Baseline Requirement": {
+    "prefix": "baseline",
+    "body": [
+      "📊(baseline_required) {",
+      "    metric: ${1:measurement_type},",
+      "    current: ${2:current_value} ⚠(${3:uncertainty}),",
+      "    target: ${4:target_value}",
+      "}"
+    ],
+    "description": "Define baseline measurement requirement"
+  },
+
+  "Iterative Process": {
+    "prefix": "iterate",
+    "body": [
+      "🔄(${1:process_name}) {",
+      "    initial: ${2:starting_state},",
+      "    loop: ${3:iteration_logic},",
+      "    convergence: ${4:end_condition}",
+      "}"
+    ],
+    "description": "Define iterative refinement process"
+  },
+
+  "Comment Block": {
+    "prefix": "comment",
+    "body": [
+      "// ${1:comment_title}",
+      "// ${2:detailed_explanation}",
+      "// Symbols: ${3:symbol_explanations}",
+      "$0"
+    ],
+    "description": "Multi-line comment block with symbol explanations"
+  }
+}
