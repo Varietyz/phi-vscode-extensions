@@ -747,7 +747,6 @@ export class PhipromptDocumentLinkProvider implements vscode.DocumentLinkProvide
         if (targetLine !== -1) {
           const link = new vscode.DocumentLink(range);
           link.target = vscode.Uri.parse(`${document.uri}#L${targetLine + 1}`);
-          link.tooltip = `Go to section: ${sectionName}`;
           links.push(link);
         }
       }
@@ -769,9 +768,6 @@ export class PhipromptDocumentLinkProvider implements vscode.DocumentLinkProvide
         if (targetLine !== -1) {
           const link = new vscode.DocumentLink(range);
           link.target = vscode.Uri.parse(`${document.uri}#L${targetLine + 1}`);
-          link.tooltip = property 
-            ? `Go to submodule: ${module}.${property}`
-            : `Go to module: ${module}`;
           links.push(link);
         }
       }
@@ -789,7 +785,6 @@ export class PhipromptDocumentLinkProvider implements vscode.DocumentLinkProvide
         if (targetLine !== -1) {
           const link = new vscode.DocumentLink(range);
           link.target = vscode.Uri.parse(`${document.uri}#L${targetLine + 1}`);
-          link.tooltip = `Go to pipeline step: → ${step}`;
           links.push(link);
         }
       }
@@ -807,7 +802,6 @@ export class PhipromptDocumentLinkProvider implements vscode.DocumentLinkProvide
         if (targetLine !== -1) {
           const link = new vscode.DocumentLink(range);
           link.target = vscode.Uri.parse(`${document.uri}#L${targetLine + 1}`);
-          link.tooltip = `Go to meta-control: ⇑.${category}`;
           links.push(link);
         }
       }

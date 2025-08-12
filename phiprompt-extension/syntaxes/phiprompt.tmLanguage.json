@@ -2,137 +2,446 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "PHIPROMPT",
   "scopeName": "source.phiprompt",
-  "fileTypes": ["φp", "phip", "phicode"],
+  "fileTypes": ["φp"],
   "patterns": [
-    {"include": "#framework-headers"},
-    {"include": "#activation-module"},
-    {"include": "#framework-definition"},
-    {"include": "#pipeline-structure"},
-    {"include": "#greek-symbols"},
-    {"include": "#logical-operators"},
-    {"include": "#emoji-flags"},
-    {"include": "#domain-elements"},
-    {"include": "#format-controls"},
-    {"include": "#meta-level"},
-    {"include": "#strings-comments"}
+    {
+      "include": "#section-headers"
+    },
+    {
+      "include": "#phi-pipeline"
+    },
+    {
+      "include": "#pipeline-sequences"
+    },
+    {
+      "include": "#greek-modules"
+    },
+    {
+      "include": "#framework-operators"
+    },
+    {
+      "include": "#logical-operators"
+    },
+    {
+      "include": "#challenge-flags"
+    },
+    {
+      "include": "#domain-notation"
+    },
+    {
+      "include": "#quantified-statements"
+    },
+    {
+      "include": "#transformation-chains"
+    },
+    {
+      "include": "#conditional-logic"
+    },
+    {
+      "include": "#mathematical-symbols"
+    },
+    {
+      "include": "#assignments"
+    },
+    {
+      "include": "#parenthetical-explanations"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#brackets"
+    },
+    {
+      "include": "#uncertainty-markers"
+    },
+    {
+      "include": "#string-literals"
+    }
   ],
   "repository": {
-    "framework-headers": {
-      "patterns": [{
-        "match": "##\\s*\\[(\\w+(?:\\.\\w+)*)\\.(INPUT|ACTIVATE_MODULE)\\]",
-        "name": "markup.heading.phiprompt",
-        "captures": {
-          "1": {"name": "entity.name.type.class.python"},
-          "2": {"name": "keyword.control.directive.php"}
-        }
-      }]
-    },
-    "activation-module": {
-      "patterns": [{
-        "match": "(activate\\.Φ)\\s*(=)\\s*(∀)\\s*\\(([^)]+)\\)\\s*(→)\\s*(ALWAYS)\\s*(\\{)",
-        "name": "meta.activation.phiprompt",
-        "captures": {
-          "1": {"name": "storage.type.function.js"},
-          "2": {"name": "keyword.operator.assignment.js"},
-          "3": {"name": "keyword.operator.logical.php"},
-          "4": {"name": "variable.parameter.function.js"},
-          "5": {"name": "keyword.operator.arrow.php"},
-          "6": {"name": "constant.language.js"},
-          "7": {"name": "punctuation.definition.block.js"}
-        }
-      }]
-    },
-    "framework-definition": {
-      "patterns": [{
-        "match": "(Φ)\\.(\\w+)\\s*(=)\\s*(\\{)",
-        "captures": {
-          "1": {"name": "support.type.class.js"},
-          "2": {"name": "entity.name.function.js"},
-          "3": {"name": "keyword.operator.assignment.js"},
-          "4": {"name": "punctuation.definition.block.js"}
-        }
-      }]
-    },
-    "pipeline-structure": {
+    "section-headers": {
       "patterns": [
         {
-          "match": "(→)\\s*([ξεαρωφκσδπβγτιυχ])\\s*:",
+          "match": "##\\s*\\[(.*?)\\]",
+          "name": "entity.name.section.phiprompt",
           "captures": {
-            "1": {"name": "keyword.operator.arrow.php"},
-            "2": {"name": "support.class.greek.phiprompt"}
+            "1": {
+              "name": "string.quoted.double.phiprompt"
+            }
           }
         },
         {
-          "match": "([\\w_]+)\\s*(→)\\s*([\\w_]+)\\s*(→)\\s*([\\w_]+)",
+          "match": "\\[\\s*(ACTIVATE|MANDATORY|ALWAYS APPLY)\\s*\\]",
+          "name": "keyword.control.directive.phiprompt"
+        }
+      ]
+    },
+    "phi-pipeline": {
+      "patterns": [
+        {
+          "match": "(Φ)\\s*(=)\\s*(\\{)",
+          "name": "keyword.control.phiprompt",
           "captures": {
-            "1": {"name": "variable.other.php"},
-            "2": {"name": "keyword.operator.arrow.php"},
-            "3": {"name": "entity.name.function.php"},
-            "4": {"name": "keyword.operator.arrow.php"},
-            "5": {"name": "variable.other.php"}
+            "1": {
+              "name": "support.type.phi.pipeline.phiprompt"
+            },
+            "2": {
+              "name": "keyword.operator.assignment.phiprompt"
+            },
+            "3": {
+              "name": "punctuation.section.brackets.phiprompt"
+            }
+          }
+        },
+        {
+          "match": "\\b(ALWAYS_EXECUTE|MESSAGE\\.PROCESS_INSTRUCTION)\\b",
+          "name": "keyword.control.execution.phiprompt"
+        }
+      ]
+    },
+    "pipeline-sequences": {
+      "patterns": [
+        {
+          "match": "([ξεαν])\\s*(→)\\s*([ξεαν])",
+          "captures": {
+            "1": {
+              "name": "support.type.pipeline.step.phiprompt"
+            },
+            "2": {
+              "name": "keyword.operator.pipeline.arrow.phiprompt"
+            },
+            "3": {
+              "name": "support.type.pipeline.step.phiprompt"
+            }
+          }
+        },
+        {
+          "match": "([ξεαν]):",
+          "captures": {
+            "1": {
+              "name": "support.type.pipeline.step.definition.phiprompt"
+            }
+          }
+        },
+        {
+          "match": "\\b(domain_analysis|entity_ident|attr_extract|value_capture|rel_map|context_preserve|validate_cohere|feedback_calibrate|anthrop_audit|credibility_assess|symbolic_synth|flag_integrate|uncertainty_embed|rel_symbolic_map|phicode_gen|code_synth)\\b",
+          "name": "entity.name.function.pipeline.operation.phiprompt"
+        }
+      ]
+    },
+    "greek-modules": {
+      "patterns": [
+        {
+          "match": "([ΦΨρνακμλξεπωχυℜΠαβγδεζηθιικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΡΣΤΥΦΧΨΩ])(\\.[\\w_]+)?\\s*(=|:)",
+          "name": "entity.name.function.greek.phiprompt",
+          "captures": {
+            "1": {
+              "name": "support.type.greek.module.phiprompt"
+            },
+            "2": {
+              "name": "variable.other.property.phiprompt"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.phiprompt"
+            }
+          }
+        },
+        {
+          "match": "\\b(Optimizer|Forensics|Processor|Filter|Normalizer|Validator|Handler|Detector)\\b",
+          "name": "comment.line.module.description.phiprompt"
+        },
+        {
+          "match": "([ΦΨρνακμλξεπωχυℜΠαβγδεζηθιικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΡΣΤΥΦΧΨΩ])(?=\\s*[^\\w\\.])",
+          "name": "support.type.greek.standalone.phiprompt"
+        }
+      ]
+    },
+    "framework-operators": {
+      "patterns": [
+        {
+          "match": "\\b(compile|run|decompile|filter|consolidator|models|principles|domains|limits|QA|compliance|deploy|success|meta)\\s*:",
+          "name": "keyword.control.framework.section.phiprompt"
+        },
+        {
+          "match": "\\b(causal|triangulation|anomaly|custody|refinement|signal|bayes|bias|scaffold|evidence|falsify|docs|error|criminal|digital|biomed|research|cognitive|incomplete|uncertainty|observer|temporal|resources|peer_review|transparency|error_rates)\\b",
+          "name": "constant.language.framework.value.phiprompt"
+        }
+      ]
+    },
+    "logical-operators": {
+      "patterns": [
+        {
+          "match": "(→)",
+          "name": "keyword.operator.arrow.transformation.phiprompt"
+        },
+        {
+          "match": "(⟹)",
+          "name": "keyword.operator.arrow.implication.phiprompt"
+        },
+        {
+          "match": "(∧)",
+          "name": "keyword.operator.logical.and.phiprompt"
+        },
+        {
+          "match": "(∨)",
+          "name": "keyword.operator.logical.or.phiprompt"
+        },
+        {
+          "match": "(⊕)",
+          "name": "keyword.operator.logical.xor.phiprompt"
+        },
+        {
+          "match": "(¬)",
+          "name": "keyword.operator.logical.not.phiprompt"
+        },
+        {
+          "match": "(≡)",
+          "name": "keyword.operator.equality.phiprompt"
+        },
+        {
+          "match": "(∈|∉)",
+          "name": "keyword.operator.membership.phiprompt"
+        }
+      ]
+    },
+    "challenge-flags": {
+      "patterns": [
+        {
+          "match": "(🌀)",
+          "name": "constant.character.emoji.metaphorical.phiprompt"
+        },
+        {
+          "match": "(🧱)",
+          "name": "constant.character.emoji.conditional.phiprompt"
+        },
+        {
+          "match": "(🎭)",
+          "name": "constant.character.emoji.affective.phiprompt"
+        },
+        {
+          "match": "(🧪)",
+          "name": "constant.character.emoji.hypothesis.phiprompt"
+        },
+        {
+          "match": "(⚠)",
+          "name": "constant.character.emoji.uncertainty.phiprompt"
+        },
+        {
+          "match": "(🔍)",
+          "name": "constant.character.emoji.investigation.phiprompt"
+        },
+        {
+          "match": "(📝)",
+          "name": "constant.character.emoji.qualitative.phiprompt"
+        },
+        {
+          "match": "(🔗)",
+          "name": "constant.character.emoji.relationship.phiprompt"
+        },
+        {
+          "match": "(⚡|🔄|📊)",
+          "name": "constant.character.emoji.processing.phiprompt"
+        }
+      ]
+    },
+    "domain-notation": {
+      "patterns": [
+        {
+          "match": "(modal|state|data|meta|flag|link)\\.(pos|req|hold|active|pending|quant|qual|infer|explicit|warn|error|rel|causal)",
+          "name": "support.type.domain.phiprompt",
+          "captures": {
+            "1": {
+              "name": "support.type.domain.namespace.phiprompt"
+            },
+            "2": {
+              "name": "variable.other.property.domain.phiprompt"
+            }
+          }
+        },
+        {
+          "match": "(\\w+)\\.(\\w+)",
+          "captures": {
+            "1": {
+              "name": "support.type.domain.phiprompt"
+            },
+            "2": {
+              "name": "variable.other.property.phiprompt"
+            }
           }
         }
       ]
     },
-    "greek-symbols": {
-      "patterns": [{
-        "match": "\\b([ΦΨρνακμλξεπωχυℜΠΩΛΘΡΕΝΤΟαβγδζηθιστφψΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ])\\b",
-        "name": "support.class.greek.phiprompt"
-      }]
-    },
-    "logical-operators": {
-      "patterns": [{
-        "match": "(∧|∪|⊕|;|∨|¬|≡|∈|∉|∅|∀|∃|[><≥≤≈≫≪])",
-        "name": "keyword.operator.logical.php"
-      }]
-    },
-    "emoji-flags": {
-      "patterns": [{
-        "match": "([🌀🧱🎭🧪⚠🔍📝🔗📊⚡🔄🏗️🔧⚙️🎨📖🎪✨💰📈🎯🔬🌟🛡️🧠💭🔐])",
-        "name": "constant.character.emoji.phiprompt"
-      }]
-    },
-    "domain-elements": {
-      "patterns": [{
-        "match": "\\b([A-Z])\\.(\\w+)",
-        "captures": {
-          "1": {"name": "variable.other.php"},
-          "2": {"name": "variable.other.property.php"}
+    "quantified-statements": {
+      "patterns": [
+        {
+          "match": "([∀∃])\\s*(\\w+)\\s*(∈|∉)\\s*(\\w+)\\s*(→|⟹)",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.quantifier.phiprompt"
+            },
+            "2": {
+              "name": "variable.parameter.quantified.phiprompt"
+            },
+            "3": {
+              "name": "keyword.operator.membership.phiprompt"
+            },
+            "4": {
+              "name": "support.type.domain.quantified.phiprompt"
+            },
+            "5": {
+              "name": "keyword.operator.implication.phiprompt"
+            }
+          }
         }
-      }]
+      ]
     },
-    "format-controls": {
-      "patterns": [{
-        "match": "\\b([FT])\\s*(→)\\s*(\\w+)",
-        "captures": {
-          "1": {"name": "keyword.control.php"},
-          "2": {"name": "keyword.operator.arrow.php"},
-          "3": {"name": "constant.language.php"}
+    "transformation-chains": {
+      "patterns": [
+        {
+          "match": "(\\w+)\\s*(→)\\s*(\\w+)\\s*(→)\\s*(\\w+)",
+          "captures": {
+            "1": {
+              "name": "variable.other.transformation.input.phiprompt"
+            },
+            "2": {
+              "name": "keyword.operator.arrow.transformation.phiprompt"
+            },
+            "3": {
+              "name": "variable.other.transformation.process.phiprompt"
+            },
+            "4": {
+              "name": "keyword.operator.arrow.transformation.phiprompt"
+            },
+            "5": {
+              "name": "variable.other.transformation.output.phiprompt"
+            }
+          }
         }
-      }]
+      ]
     },
-    "meta-level": {
-      "patterns": [{
-        "match": "(⇑)\\.(\\w+)",
-        "captures": {
-          "1": {"name": "keyword.control.php"},
-          "2": {"name": "entity.name.type.class.php"}
+    "conditional-logic": {
+      "patterns": [
+        {
+          "match": "\\b(IF)\\s*\\(",
+          "name": "keyword.control.conditional.phiprompt"
+        },
+        {
+          "match": "\\b(ELSE|ELIF)\\b",
+          "name": "keyword.control.conditional.phiprompt"
+        },
+        {
+          "match": "\\b(technical|feasible|quality)\\b",
+          "name": "variable.other.conditional.property.phiprompt"
         }
-      }]
+      ]
     },
-    "strings-comments": {
+    "mathematical-symbols": {
+      "patterns": [
+        {
+          "match": "[><≥≤≈≫≪⇒↑↻∥⊤⊥⇔⊢⊨∴∵≜⋀⋁↦□◇♾⌛⚙Δ∇Λ∑Π∂↻⇑⇓±≅≬☉☽↪⇨⇦⊣⟁↝⇝☯]",
+          "name": "keyword.operator.mathematical.phiprompt"
+        },
+        {
+          "match": "[ℛ𝔏𝔇𝔐𝔽𝔾]",
+          "name": "support.type.machine-learning.phiprompt"
+        },
+        {
+          "match": "[🜃🜄🜂🜔🜚🜛🜍🜖]",
+          "name": "keyword.operator.alchemical.phiprompt"
+        }
+      ]
+    },
+    "assignments": {
+      "patterns": [
+        {
+          "match": "([\\w.ΦΨρνακμλξεπωχυℜΠαβγδεζηθιικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΡΣΤΥΦΧΨΩ]+)\\s*(=|:)\\s*",
+          "captures": {
+            "1": {
+              "name": "variable.other.assignment.phiprompt"
+            },
+            "2": {
+              "name": "keyword.operator.assignment.phiprompt"
+            }
+          }
+        }
+      ]
+    },
+    "parenthetical-explanations": {
+      "patterns": [
+        {
+          "match": "([🌀🧱🎭🧪⚡🔄📊⚠🔍📝🔗])\\(([^)]+)\\)",
+          "captures": {
+            "1": {
+              "name": "constant.character.emoji.challenge.phiprompt"
+            },
+            "2": {
+              "name": "comment.line.explanation.phiprompt"
+            }
+          }
+        },
+        {
+          "match": "\\(([^)]*(?:explanation|context|note|verify|validate|assess|check)[^)]*)\\)",
+          "captures": {
+            "1": {
+              "name": "comment.line.explanation.parenthetical.phiprompt"
+            }
+          }
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.phiprompt"
+        }
+      ]
+    },
+    "brackets": {
+      "patterns": [
+        {
+          "match": "[\\{\\}]",
+          "name": "punctuation.section.brackets.curly.phiprompt"
+        },
+        {
+          "match": "[\\[\\]]",
+          "name": "punctuation.section.brackets.square.phiprompt"
+        },
+        {
+          "match": "[\\(\\)]",
+          "name": "punctuation.section.brackets.round.phiprompt"
+        }
+      ]
+    },
+    "uncertainty-markers": {
+      "patterns": [
+        {
+          "match": "([⚠🧪])\\s*\\(([^)]+)\\)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.uncertainty.phiprompt"
+            },
+            "2": {
+              "name": "string.unquoted.uncertainty.explanation.phiprompt"
+            }
+          }
+        }
+      ]
+    },
+    "string-literals": {
       "patterns": [
         {
           "match": "/([^/]+)/g",
-          "name": "string.regexp.js"
+          "name": "string.regexp.phiprompt"
         },
         {
           "match": "\"([^\"]+)\"",
-          "name": "string.quoted.double.php"
+          "name": "string.quoted.double.phiprompt"
         },
         {
-          "match": "//.*$",
-          "name": "comment.line.double-slash.js"
+          "match": "'([^']+)'",
+          "name": "string.quoted.single.phiprompt"
         }
       ]
     }

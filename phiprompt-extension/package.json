@@ -2,7 +2,7 @@
   "name": "phiprompt-extension",
   "displayName": "PHIPROMPT - Complete Framework Navigation & Validation",
   "description": "Enhanced Φ framework support with full hierarchical navigation, breadcrumb trails, framework validation, and comprehensive symbolic language integration",
-  "version": "2.0.3",
+  "version": "1.0.0",
   "publisher": "phiprompt",
   "main": "./out/extension.js",
   "engines": {
