@@ -419,3 +419,4 @@ PROJECT_CONTENTS.txt
 /.Frameworks
 PROJECT_TREE.md
 1.content_extract.py
+.env

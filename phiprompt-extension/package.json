@@ -1,9 +1,9 @@
 {
-  "name": "phiprompt-extension",
-  "displayName": "PHIPROMPT - Complete Framework Navigation & Validation",
-  "description": "Φ framework support with full hierarchical navigation, breadcrumb trails, framework validation, and comprehensive symbolic language integration",
-  "version": "1.0.0",
-  "publisher": "phiprompt",
+  "name": "phiprompt",
+  "displayName": "(φp) PHIPROMPT - AI Prompt Architecture",
+  "description": "Prompt Framework Support with full hierarchical navigation, breadcrumb trails, framework validation, and comprehensive symbolic language integration",
+  "version": "1.0.1",
+  "publisher": "Banes-Lab",
   "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.74.0"
@@ -436,12 +436,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Varietyz/vscode-extension.git"
+    "url": "https://github.com/Varietyz/phi-vscode-extensions.git"
   },
   "bugs": {
-    "url": "https://github.com/Varietyz/vscode-extension/issues"
+    "url": "https://github.com/Varietyz/phi-vscode-extensions/issues"
   },
-  "homepage": "https://github.com/Varietyz/vscode-extension#readme",
+  "homepage": "https://github.com/Varietyz/phi-vscode-extensions#readme",
   "license": "MIT",
   "icon": "icons/phiprompt-dark.png",
   "galleryBanner": {
@@ -451,7 +451,7 @@
   "badges": [
     {
       "url": "https://img.shields.io/badge/Framework-PHIPROMPT-blue",
-      "href": "https://github.com/Varietyz/vscode-extension",
+      "href": "https://github.com/Varietyz/phi-vscode-extensions",
       "description": "Φ Extensions"
     }
   ]

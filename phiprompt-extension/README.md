@@ -2,10 +2,10 @@
 
 <div align="center">
 
-<img src="https://banes-lab.com/assets/images/banes_lab/700px_Main_Animated.gif" width="100" alt="Banes Lab"/>
+![PHICODE Logo](icons/phiprompt-light.png)
 
-[![VSCode Extension](https://img.shields.io/badge/VSCode-Extension-blue.svg)](https://marketplace.visualstudio.com/items?itemName=phiprompt.phiprompt-extension)
-[![Framework](https://img.shields.io/badge/Framework-PHIPROMPT-purple.svg)](https://github.com/Varietyz/vscode-extension/phiprompt-extension)
+[![VSCode Extension](https://img.shields.io/badge/VSCode-Extension-blue.svg)](https://marketplace.visualstudio.com/items?itemName=Banes-Lab.phiprompt)
+[![Framework](https://img.shields.io/badge/Framework-PHIPROMPT-purple.svg)](https://github.com/Varietyz/phi-vscode-extensions/tree/main/phiprompt-extension)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.0.1-orange.svg)](package.json)
 [![Accessibility](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-green)](https://www.w3.org/WAI/WCAG21/AA/)
@@ -28,11 +28,11 @@ A comprehensive development environment for the PHIPROMPT symbolic framework, en
 
 ```bash
 # Install from VSCode Marketplace
-code --install-extension phiprompt.phiprompt-extension
+code --install-extension Banes-Lab.phiprompt
 
 # Or download from GitHub releases
-git clone https://github.com/Varietyz/vscode-extension/phiprompt-extension.git
-cd vscode-extension
+git clone https://github.com/Varietyz/phi-vscode-extensions/tree/main/phiprompt-extension.git
+cd phi-vscode-extension
 npm install && npm run package
 ```
 
@@ -407,7 +407,7 @@ PHIPROMPT is designed with accessibility at its core:
 - **Understandable**: Information and UI operation is clear
 - **Robust**: Compatible with current and future assistive technologies
 
-> **🤝 Accessibility Commitment**: We strive to continuously improve accessibility. Report barriers via our [accessibility feedback form](https://github.com/Varietyz/vscode-extension/phiprompt-extension/issues/new?template=accessibility.md).
+> **🤝 Accessibility Commitment**: We strive to continuously improve accessibility. Report barriers via our [accessibility feedback form](https://github.com/Varietyz/phi-vscode-extensions/tree/main/phiprompt-extension/issues/new?template=accessibility.md).
 
 ---
 
@@ -443,7 +443,7 @@ git --version     # ≥ 2.25.0
 #### **Getting Started**
 ```bash
 # 1️⃣ Clone repository
-git clone https://github.com/Varietyz/vscode-extension/phiprompt-extension.git
+git clone https://github.com/Varietyz/phi-vscode-extensions/tree/main/phiprompt-extension.git
 cd phiprompt-extension
 
 # 2️⃣ Install dependencies
@@ -475,7 +475,7 @@ code .
 ### **🆘 Getting Help**
 
 #### **Community Support**
-- **📋 GitHub Discussions**: [Community forum](https://github.com/Varietyz/vscode-extension/phiprompt-extension/discussions)
+- **📋 GitHub Discussions**: [Community forum](https://github.com/Varietyz/phi-vscode-extensions/tree/main/phiprompt-extension/discussions)
 - **📧 Email Support**: jay@banes-lab.com
 - **📖 Documentation**: Comprehensive guides available in the `/docs` folder
 
@@ -535,22 +535,27 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
+<div align="center">
+
 ## 🌟 Project Information
 
 **Developed by:** [Jay Baleine](https://github.com/Varietyz) at [Banes Lab](https://banes-lab.com)  
-**Repository:** [GitHub - phiprompt-extension](https://github.com/Varietyz/vscode-extension/phiprompt-extension)  
+**Repository:** [GitHub - phiprompt-extension](https://github.com/Varietyz/phi-vscode-extensions/tree/main/phiprompt-extension)  
 **Website:** [banes-lab.com](https://banes-lab.com)  
-**Version:** 1.0.0  
+**Version:** 1.0.1  
 **Last Updated:** August 2025
 
-> **🎯 Mission Statement:** Advancing the frontier of AI prompt engineering through mathematical precision, symbolic elegance, and developer-friendly tooling that transforms complex logical structures into intuitive, maintainable frameworks.
+> **🎯 Mission Statement:** Advancing the frontier of AI prompt engineering through mathematical alignment, symbolics, and developer-friendly tooling that transforms complex structures into intuitive, maintainable frameworks.
 
 **⭐ If this project helps your development workflow, please consider starring the repository to support continued development!**
 
 ---
 
-<div align="center">
+**Made with ❤️ by [Jay Baleine - Banes Lab](https://banes-lab.com)** 
 
-*Built with ❤️ for the AI development community*
+<img src="https://banes-lab.com/assets/images/banes_lab/700px_Main_Animated.gif" width="100" alt="Banes Lab"/>
+
+**© 2025 Banes Lab • MIT License • [Extensions Repository](https://github.com/Varietyz/phi-vscode-extensions)**
+
 
 </div>

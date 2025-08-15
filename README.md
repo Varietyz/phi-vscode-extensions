@@ -4,10 +4,10 @@
 
 <img src="https://banes-lab.com/assets/images/banes_lab/700px_Main_Animated.gif" width="130" alt="Banes Lab"/>
 
-[![Build Status](https://img.shields.io/github/workflow/status/Varietyz/vscode-extension/CI?style=flat-square)](https://github.com/Varietyz/vscode-extension/actions)
+[![Build Status](https://img.shields.io/github/workflow/status/Varietyz/phi-vscode-extensions//CI?style=flat-square)](https://github.com/Varietyz/phi-vscode-extensions/actions)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Marketplace](https://img.shields.io/badge/VSCode-Marketplace-brightgreen.svg?style=flat-square)](https://marketplace.visualstudio.com/publishers/banes-lab)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/banes-lab.phicode?style=flat-square&label=PHICODE%20Downloads)](https://marketplace.visualstudio.com/items?itemName=banes-lab.phicode)
+[![Marketplace](https://img.shields.io/badge/VSCode-Marketplace-brightgreen.svg?style=flat-square)](https://marketplace.visualstudio.com/publishers/Banes-Lab)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/Banes-Lab.phicode?style=flat-square&label=PHICODE%20Downloads)](https://marketplace.visualstudio.com/items?itemName=Banes-Lab.phicode)
 [![Accessibility](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-green?style=flat-square)](https://www.w3.org/WAI/WCAG21/AA/)
 
 **Symbolic programming and AI framework development extensions for Visual Studio Code**
@@ -120,10 +120,10 @@ activate.Φ = ∀(M, A, I, N) → ALWAYS{
 
 ```bash
 # 1️⃣ Install PHICODE Extension
-code --install-extension banes-lab.phicode
+code --install-extension Banes-Lab.phicode
 
 # 2️⃣ Install PHIPROMPT Extension  
-code --install-extension phiprompt.phiprompt-extension
+code --install-extension Banes-Lab.phiprompt
 
 # 3️⃣ Install PHICODE Runtime (for execution)
 pip install phicode
@@ -404,7 +404,7 @@ The extensions are built upon research in:
 - **User Feedback Integration**: Community input from accessibility advocates
 - **Expert Review Process**: Professional accessibility audit participation
 
-> **🤝 Accessibility Commitment**: We continuously improve accessibility features. Report barriers through our [accessibility feedback form](https://github.com/Varietyz/vscode-extension/issues/new?template=accessibility.md).
+> **🤝 Accessibility Commitment**: We continuously improve accessibility features. Report barriers through our [accessibility feedback form](https://github.com/Varietyz/phi-vscode-extensions/issues/new?template=accessibility.md).
 
 ---
 
@@ -444,8 +444,8 @@ git --version     # ≥ 2.25.0
 **Getting Started**:
 ```bash
 # 1️⃣ Repository setup
-git clone https://github.com/Varietyz/vscode-extension.git
-cd vscode-extension
+git clone https://github.com/Varietyz/phi-vscode-extensions.git
+cd phi-vscode-extension
 
 # 2️⃣ Extension-specific setup
 cd phicode-extension  # or phiprompt-extension
@@ -500,7 +500,7 @@ test(formatter): expand edge case coverage
 ### 🆘 **Getting Help**
 
 **Community Support Channels**:
-- **📋 GitHub Discussions**: [Community forum](https://github.com/Varietyz/vscode-extension/discussions) for questions and collaboration
+- **📋 GitHub Discussions**: [Community forum](https://github.com/Varietyz/phi-vscode-extensions/discussions) for questions and collaboration
 - **📧 Direct Support**: jay@banes-lab.com for technical assistance and feedback
 - **📖 Documentation Hub**: Comprehensive guides available in extension-specific README files
 - **🎓 Tutorial System**: Interactive learning available through VS Code command palette
@@ -662,14 +662,14 @@ Ctrl+Shift+P → "Developer: Reload Window With Extensions Disabled"
 
 ### 📈 **Project Statistics**
 
-![GitHub Stars](https://img.shields.io/github/stars/Varietyz/vscode-extension?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/Varietyz/vscode-extension?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/Varietyz/vscode-extension)
-![GitHub Contributors](https://img.shields.io/github/contributors/Varietyz/vscode-extension)
+![GitHub Stars](https://img.shields.io/github/stars/Varietyz/phi-vscode-extensions/?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/Varietyz/phi-vscode-extensions/?style=social)
+![GitHub Issues](https://img.shields.io/github/issues/Varietyz/phi-vscode-extensions/)
+![GitHub Contributors](https://img.shields.io/github/contributors/Varietyz/phi-vscode-extensions/)
 
 **Project Health Metrics**:
 
-[![Security](https://img.shields.io/snyk/vulnerabilities/github/Varietyz/vscode-extension)](https://snyk.io/test/github/Varietyz/vscode-extension)
+[![Security](https://img.shields.io/snyk/vulnerabilities/github/Varietyz/phi-vscode-extensions/)](https://snyk.io/test/github/Varietyz/phi-vscode-extensions/)
 
 ### 📜 **License and Legal**
 
@@ -695,7 +695,7 @@ Ctrl+Shift+P → "Developer: Reload Window With Extensions Disabled"
 ### 💬 **Community Channels**
 
 - **🏠 Website**: [banes-lab.com](https://banes-lab.com)
-- **🙋 GitHub Repository**: [VSCode Extensions](https://github.com/Varietyz/vscode-extension)
+- **🙋 GitHub Repository**: [VSCode Extensions](https://github.com/Varietyz/phi-vscode-extensions)
 - **📧 Email Support**: jay@banes-lab.com
 - **📦 PHICODE Runtime**: [PyPI Package](https://pypi.org/project/phicode/)
 
@@ -705,13 +705,13 @@ Ctrl+Shift+P → "Developer: Reload Window With Extensions Disabled"
 
 **🎯 Ready to transform your development workflow?**
 
-[**📦 Install PHICODE**](https://marketplace.visualstudio.com/items?itemName=banes-lab.phicode) • [**📦 Install PHIPROMPT**](https://marketplace.visualstudio.com/items?itemName=phiprompt.phiprompt-extension) • [**📚 Read Documentation**](phicode-extension/README.md) • [**🤝 Join Community**](https://github.com/Varietyz/vscode-extension/discussions)
+[**📦 Install PHICODE**](https://marketplace.visualstudio.com/items?itemName=Banes-Lab.phicode) • [**📦 Install PHIPROMPT**](https://marketplace.visualstudio.com/items?itemName=Banes-Lab.phiprompt) • [**📚 Read Documentation**](phicode-extension/README.md) • [**🤝 Join Community**](https://github.com/Varietyz/phi-vscode-extensions/discussions)
 
 **Complete Installation**:
 ```bash
 # Install both extensions
-code --install-extension banes-lab.phicode
-code --install-extension phiprompt.phiprompt-extension
+code --install-extension Banes-Lab.phicode
+code --install-extension Banes-Lab.phiprompt
 
 # Install runtime engine
 pip install phicode
@@ -721,8 +721,8 @@ pip install phicode
 
 ---
 
-**Made with 💖 by [Jay Baleine - Banes Lab](https://banes-lab.com)**
+**Made with ❤️ by [Jay Baleine - Banes Lab](https://banes-lab.com)** 
 
-**© 2024 Banes Lab • MIT License • [PHICODE Runtime](https://github.com/Varietyz/pip-phicode) • [Extensions Repository](https://github.com/Varietyz/vscode-extension)**
+**© 2025 Banes Lab • MIT License • [PHICODE Runtime](https://github.com/Varietyz/pip-phicode) • [Extensions Repository](https://github.com/Varietyz/phi-vscode-extensions)**
 
 </div>
