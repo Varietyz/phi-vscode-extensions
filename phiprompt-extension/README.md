@@ -1,346 +1,556 @@
-# PHIPROMPT - VS Code Extension for Symbolic AI Prompts
+# PHIPROMPT VSCode Extension
 
-**Symbolic notation system for AI prompt engineering with mathematical precision.** PHIPROMPT provides a structured approach to creating precise AI prompts using mathematical symbols, framework validation, and intelligent analysis capabilities.
+<div align="center">
 
-## 📋 Overview
+<img src="https://banes-lab.com/assets/images/banes_lab/700px_Main_Animated.gif" width="100" alt="Banes Lab"/>
 
-PHIPROMPT (.φp) integrates mathematical notation with natural language for AI prompt development, offering:
+[![VSCode Extension](https://img.shields.io/badge/VSCode-Extension-blue.svg)](https://marketplace.visualstudio.com/items?itemName=phiprompt.phiprompt-extension)
+[![Framework](https://img.shields.io/badge/Framework-PHIPROMPT-purple.svg)](https://github.com/Varietyz/vscode-extension/phiprompt-extension)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.0.1-orange.svg)](package.json)
+[![Accessibility](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-green)](https://www.w3.org/WAI/WCAG21/AA/)
 
-- **🔢 Symbolic Notation**: Mathematical symbols for logical expressions (∀, ∃, ∧, ∨, →, ⟹)
-- **🚩 Challenge Flags**: Uncertainty and complexity markers (🌀, 🧱, 🎭, 🧪, ⚠)
-- **🏛️ Framework Modules**: Greek letter organizational system (Ψ, ρ, ℜ, Π)
-- **🧠 Editor Integration**: VS Code language support with GitHub Copilot context
-- **⚡ Real-time Analysis**: Framework compliance checking 🧪(validation_accuracy_varies)
+**Enhanced Φ framework support with full hierarchical navigation, breadcrumb trails, framework validation, and comprehensive symbolic language integration for Visual Studio Code.**
+
+A comprehensive development environment for the PHIPROMPT symbolic framework, enabling advanced AI prompt engineering through mathematical notation, Greek letter modules, and sophisticated pipeline architectures.
+
+</div>
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Quick Start (3 steps)
 
-### Requirements
-- **VS Code**: Version 1.74.0 or higher
-- **Font Support**: Unicode mathematical symbols ⚠(rendering_depends_on_font)
-- **Optional**: GitHub Copilot for enhanced AI features
+- [x] ✅ **Step 1**: Install dependencies
+- [ ] ⚙️ **Step 2**: Configure settings  
+- [ ] 🎯 **Step 3**: Run your first example
 
-### Installation Methods
+### ⚡ Installation (2 minutes)
 
 ```bash
-# Command line installation
+# Install from VSCode Marketplace
 code --install-extension phiprompt.phiprompt-extension
 
-# Or search "PHIPROMPT" in VS Code Extensions marketplace
+# Or download from GitHub releases
+git clone https://github.com/Varietyz/vscode-extension/phiprompt-extension.git
+cd vscode-extension
+npm install && npm run package
 ```
 
-### First PHIPROMPT Document
+### ✅ First Steps
 
-Create a new file with `.φp` extension:
+1. **Create a new file** with extension `.φp`
+2. **Start typing** framework patterns - auto-completion will guide you
+3. **Use Ctrl+Shift+P** to access the command palette for framework tools
+4. **Enable breadcrumbs** for hierarchical navigation through complex frameworks
 
-```phiprompt
-## [USER_VALIDATION]
-∀ user ∈ system → authenticated ∧ authorized
-⚠(edge_cases_exist) 🧪(requires_testing)
-
-## [Ψ.DATA_PROCESSING]
-ρ.filter: remove_duplicates ∧ validate_input
-α.validate: ∀ claim → evidence_required ⚠(manual_review_needed)
-
-modal.req(data_validation) → security_compliance
-🌀(user_experience_flows_intuitively) → design_decisions
-```
-
-**Essential Commands:**
-- `Ctrl+Shift+H` - Interactive symbol tutorial
-- `Ctrl+Shift+T` - Convert symbols to natural language
-- `Ctrl+Shift+S` - Convert text to symbols
+> **💡 Pro Tip:** Use `Ctrl+Shift+M` to automatically generate symbol mappings for your frameworks.
 
 ---
 
-## 📚 Symbol Reference
+## 📖 Table of Contents
 
-### Logic & Quantifiers
-| Symbol | Meaning | Example Usage |
-|--------|---------|---------------|
-| `∀` | Universal quantifier (for all) | `∀ user ∈ system → authenticated` |
-| `∃` | Existential quantifier (exists) | `∃ error ∈ log → alert_admin` |
-| `∧` | Logical AND | `authenticated ∧ authorized → access` |
-| `∨` | Logical OR | `admin ∨ owner → edit_privileges` |
-| `→` | Implication/transformation | `input → validate → process` |
-| `⟹` | Strong logical implication | `security_breach ⟹ immediate_lockdown` |
-| `¬` | Logical negation | `¬suspended → active_status` |
-| `∈` | Set membership | `user ∈ admin_group` |
-| `≡` | Equivalence | `input ≡ sanitized → safe_processing` |
-
-### Challenge Flags 🚩
-| Flag | Purpose | Application Context |
-|------|---------|-------------------|
-| `🌀` | **Metaphorical Content** | Interpretive or ambiguous statements |
-| `🧱` | **Complex Logic** | Nested conditional structures |
-| `🎭` | **Affective Elements** | Emotional or user experience factors |
-| `🧪` | **Unverified Claims** | Hypotheses requiring validation |
-| `⚠` | **Explicit Uncertainty** | Variable or incomplete information |
-| `⚡` | **High Complexity** | Resource-intensive processing |
-| `🔄` | **Iterative Processes** | Loops or refinement cycles |
-| `📊` | **Measurement Required** | Quantification needed |
-| `🔍` | **Investigation Needed** | Further analysis required |
-| `📝` | **Qualitative Assessment** | Descriptive evaluation |
-| `🔗` | **Inferred Relationships** | Indirect connections |
-
-### Framework Modules 🏛️
-| Module | Function | Implementation Pattern |
-|--------|----------|----------------------|
-| `Ψ` | **Optimizer** | `Ψ.filter: remove_duplicates` |
-| `ρ` | **Filter Component** | `ρ.dedup: unique_entities → cleaned_data` |
-| `ℜ` | **Forensics Analysis** | `ℜ.analyze: evidence → conclusions` |
-| `Π` | **Processor Engine** | `Π.compile: logic → executable_form` |
-
-### Domain Notation 🏷️
-| Notation | Semantic Meaning | Usage Context |
-|----------|------------------|---------------|
-| `modal.pos` | Possibility/potential | `modal.pos(user_behavior_change) → adaptive_interface` |
-| `modal.req` | Necessity/requirement | `modal.req(input_validation) → security_compliance` |
-| `state.hold` | Process suspension | `state.hold(user_input) → validation_complete` |
-| `data.quant` | Quantitative information | `data.quant(performance_metrics) → optimization` |
-| `data.qual` | Qualitative information | `data.qual(user_feedback) → design_insights` |
+- [🎯 Core Features](#-core-features)
+- [📋 System Requirements](#-system-requirements)
+- [⚙️ Configuration](#️-configuration)
+- [🔧 Framework Architecture](#-framework-architecture)
+- [📝 Usage Examples](#-usage-examples)
+- [🎨 Symbol Reference](#-symbol-reference)
+- [🛠️ Development Features](#️-development-features)
+- [♿ Accessibility](#-accessibility)
+- [🤝 Contributing](#-contributing)
+- [❓ Support & FAQ](#-support--faq)
+- [📄 License](#-license)
 
 ---
 
-## ⚙️ Language Support Features
+## 🎯 Core Features
 
-### Syntax Highlighting
-- **Mathematical Symbols**: Unicode-aware rendering with semantic colors
-- **Challenge Flags**: Contextual highlighting for framework elements
-- **Greek Modules**: Structured syntax for organizational components
-- **Domain Notation**: Pattern recognition for structured semantics
+### **🔍 Advanced Language Support**
+- **Symbolic Language Recognition** - Complete PHIPROMPT syntax highlighting with mathematical notation
+- **Greek Letter Modules** - Full support for Φ, Ψ, ρ, ν, α, κ, μ, ℜ, Π framework components
+- **Unicode Math Symbols** - Comprehensive rendering of ∀, ∃, →, ∧, ∨, ⟹ and specialized operators
+- **File Type Association** - Native support for `.φp`, `.phip`, and `.φc` files
 
-### IntelliSense & Completions
-- **Symbol Suggestions**: Context-aware mathematical notation
-- **Framework Patterns**: Greek module and domain notation completions
-- **Challenge Flag Recommendations**: AI-suggested markers based on content analysis 🧪(accuracy_varies_by_context)
-- **Natural Language Integration**: Bidirectional text-symbol conversion
+### **🎨 Enhanced Development Experience**
+- **Intelligent Auto-Completion** - Context-aware suggestions for framework patterns and symbolic operators
+- **Framework Validation** - Real-time compliance checking with automatic error detection on save
+- **Hierarchical Navigation** - Advanced breadcrumb system for complex framework structures
+- **Pipeline Visualization** - Visual representation of ξ→ε→α→ρ→ω→φ→κ→σ→δ processing chains
 
-### Documentation & Help
-- **Hover Information**: Detailed symbol explanations with usage examples
-- **Interactive Tutorial**: Comprehensive symbol reference with copy-to-editor functionality
-- **Framework Context**: Integration guidance for PHIPROMPT compliance
-- **Error Explanations**: Actionable suggestions for validation issues
+### **🏗️ Professional Workflow Integration**
+- **GitHub Copilot Support** - Seamless integration with AI coding assistance for symbolic frameworks
+- **Symbolic Mapping Generation** - Automatic creation of natural language equivalents for complex symbolic expressions
+- **Framework Templates** - Built-in snippets for common patterns including business analysis, technical documentation, and creative content frameworks
+- **Uncertainty Flag Highlighting** - Visual indicators for ⚠️, 🌀, 🧱, 🧪 challenge markers
 
-### Development Tools
-- **Real-time Validation**: Framework compliance checking ⚠(rule_completeness_varies)
-- **Code Actions**: Symbol conversion, flag insertion, module extraction
-- **Safe Refactoring**: Protected core symbols with smart renaming
-- **Format Support**: Mathematical notation spacing and alignment
+### **✅ Quality Assurance Tools**
+- **Complexity Analysis** - Automated assessment of framework sophistication with performance recommendations
+- **Code Actions** - Quick fixes for common framework syntax issues and optimization suggestions
+- **Format Conversion** - Bidirectional transformation between symbolic notation and natural language
+- **Tutorial Integration** - Interactive learning system for framework development best practices
 
 ---
 
-## 🛠️ Configuration Options
+## 📋 System Requirements
 
-### Extension Settings
-Access via `File > Preferences > Settings` → Search "PHIPROMPT"
+| Component | Requirement | Notes |
+|-----------|-------------|-------|
+| **VS Code** | ≥ 1.74.0 | Latest stable recommended |
+| **Node.js** | ≥ 16.0.0 | For development contributions only |
+| **TypeScript** | ≥ 4.9.4 | Included with development setup |
+| **Memory** | ≥ 4GB RAM | For large project indexing |
+
+> **⚠️ Note:** This extension focuses on VSCode integration. For runtime execution capabilities, see the companion [PHICODE Runtime Engine](https://pypi.org/project/phicode/).
+
+---
+
+## ⚙️ Configuration
+
+### **🎛️ User Settings**
+
+Access settings through `File > Preferences > Settings` and search for "PHIPROMPT":
 
 ```json
 {
-  "phiprompt.enableAIInterpretation": true,
-  "phiprompt.autoInsertChallengeFlags": true,
-  "phiprompt.frameworkValidation": "strict",
-  "phiprompt.symbolCompletionMode": "intelligent",
-  "phiprompt.showHoverDocumentation": true,
-  "phiprompt.enableCopilotContext": true,
-  "phiprompt.lintingDelay": 500
+  "phiprompt.autoValidation": true,
+  "phiprompt.showBreadcrumbs": true,
+  "phiprompt.enableSubmoduleNavigation": true,
+  "phiprompt.validatePipelineSequences": true,
+  "phiprompt.highlightUncertaintyFlags": true,
+  "phiprompt.uncertaintyThreshold": 0.2,
+  "phiprompt.enableComplexityAnalysis": true
 }
 ```
 
-### AI Integration
-- **Context Injection**: GitHub Copilot receives PHIPROMPT framework information
-- **Symbol Interpretation**: AI-assisted explanation of complex constructs
-- **Pattern Recognition**: Contextual suggestions based on surrounding elements ⚠(AI_accuracy_varies)
+### **⌨️ Keyboard Shortcuts**
 
-### Validation Levels
-- **Strict**: Framework violations show as errors
-- **Lenient**: Framework violations show as warnings
-- **Disabled**: No automated compliance checking
+| Shortcut | Command | Description |
+|----------|---------|-------------|
+| `Ctrl+Shift+V` | Validate Framework | Run comprehensive framework compliance check |
+| `Ctrl+Shift+N` | Navigate to Section | Quick navigation through framework hierarchy |
+| `Ctrl+Shift+C` | Convert to Text | Transform symbols to natural language |
+| `Ctrl+Shift+S` | Convert to Symbols | Transform text to symbolic notation |
+| `Ctrl+Shift+A` | Analyze Complexity | Assess framework sophistication level |
+| `Ctrl+Shift+M` | Generate Symbol Mapping | Auto-create symbol reference documentation |
+
+<details>
+<summary>🔧 **Advanced Setup** (Click to expand)</summary>
+
+### **🎨 Workspace Configuration**
+
+For team projects, create a `.vscode/settings.json` file:
+
+```json
+{
+  "[phiprompt]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    },
+    "breadcrumbs.enabled": true
+  }
+}
+```
+
+### **🔗 File Associations**
+
+```json
+{
+  "files.associations": {
+    "*.phi": "phiprompt",
+    "*.phicode": "phiprompt"
+  }
+}
+```
+
+</details>
+
+---
+
+## 🔧 Framework Architecture
+
+### **🧠 Core Components**
+
+The PHIPROMPT framework implements a sophisticated pipeline architecture:
+
+```javascript
+Φ = {
+    Ψ: {  // Optimizer Module
+        ρ: {filter: /dup|overconf|loops/g, consolidator: [merge,collapse]},
+        ν: [entity,attr,val,rel], α: [conflicts,claims,loops,novelty],
+        μ: [abstract,fig,subj], κ: [nest,vague,impl]
+    },
+    ℜ: {  // Forensics Module
+        models: [causal,triangulation,anomaly,custody,refinement],
+        principles: [evidence,falsify,docs,error]
+    },
+    Π: {  // Processor Module
+        compile: { ξ→ε→α→ν→ρ→χ→ω→φ→β→κ→σ→λ→μ→τ→π→δ }
+    }
+}
+```
+
+### **🏗️ Module Hierarchy**
+
+- **Φ (Framework)** - Main pipeline coordinator
+- **Ψ (Optimizer)** - Input processing and validation
+  - **ρ (Filter)** - Data cleaning and consolidation
+  - **ν (Normalizer)** - Entity standardization
+  - **α (Validator)** - Conflict detection
+  - **μ (Detector)** - Content classification
+  - **κ (Handler)** - Nested structure management
+- **ℜ (Forensics)** - Evidence-based analysis
+- **Π (Processor)** - Sequential transformation pipeline
+
+### **⚙️ Pipeline Processing Chain**
+
+The standard processing sequence follows this pattern:
+
+1. **ξ (Domain Analysis)** - Context classification and challenge detection
+2. **ε (Entity Identification)** - Object, concept, and relationship extraction
+3. **α (Attribute Extraction)** - Property and specification mapping
+4. **ν (Value Capture)** - Data normalization and categorization
+5. **ρ (Relationship Mapping)** - Connection analysis and validation
+6. **χ (Context Preservation)** - Temporal and spatial awareness
+7. **ω (Coherence Validation)** - Consistency and completeness checking
+8. **φ (Feedback Calibration)** - Response optimization
+9. **σ (Symbolic Synthesis)** - Pattern integration
+10. **δ (Implementation)** - Final output generation
 
 ---
 
 ## 📝 Usage Examples
 
-### Basic Authentication Logic
+### **🚀 Basic Framework Creation**
+
 ```phiprompt
-## [AUTHENTICATION_FLOW]
-∀ user ∈ system → {
-    ∃ credentials ∈ user_input → validate_format
-    credentials ≡ stored_hash → authentication_success
-    authenticated ∧ ¬account_locked → grant_session
-    ⚠(rate_limiting_applies) 🧪(lockout_effectiveness)
+##[P.T.S.U.INPUT]
+Collect.project_elements.P_T_S_U : {
+    Project.technical_specifications, 
+    Target.audience_requirements, 
+    Structure.navigation_patterns, 
+    Usability.accessibility_standards
 }
 
-🧱(nested_validation_logic) 🎭(user_experience_priority)
-```
-
-### Data Processing Pipeline
-```phiprompt
-## [Ψ.DATA_PIPELINE]
-ρ.sanitization: {
-    ∀ input_record ∈ raw_data → format_validation
-    remove_duplicates: unique_identifier_check
-    normalize_encoding: utf8_conversion ⚠(character_loss_possible)
-}
-
-ν.enrichment: {
-    geo_lookup: ip_address → location_approximation 🧪(accuracy_varies)
-    demographic_inference: behavior_patterns → user_segments ⚠(bias_concerns)
-}
-
-## [ℜ.QUALITY_CONTROL]
-evidence_validation: {
-    ∀ data_source → credibility_assessment ∧ freshness_check
-    anomaly_detection: statistical_deviation > threshold → manual_review
-    📊(baseline_metrics_required) → performance_comparison
+##[ACTIVATE_MODULE]
+activate.Φ = ∀(P, T, S, U) → ALWAYS{
+    ν.preprocess.capture(input_request) → 
+    μ.input_collection.extract(P, T, S, U) → 
+    Π.processing → 
+    Ω.output[
+        Technical_Documentation : P → system_specifications ∧ 🔧comprehensive_setup,
+        User_Guide : T → interaction_patterns ∧ 📝step_by_step_guidance,
+        Architecture : S → navigation_design ∧ 🏗️structural_integrity
+    ]
 }
 ```
 
-### API Design Specification
+### **🔬 Advanced Pipeline with Uncertainty Handling**
+
 ```phiprompt
-## [API_ENDPOINT_SPECIFICATION]
-endpoint.user_profile: {
-    ∀ request ∈ authenticated_requests → {
-        rate_limit: requests_per_minute ≤ 100 ⚠(varies_by_plan)
-        input_validation: required_fields ⊆ request_body
-        
-        modal.pos(incomplete_profile) → partial_data_response
-        modal.req(privacy_compliance) → sensitive_field_filtering
-        
-        🔗(user_preferences_influence_format)
-        🎭(error_messages_user_friendly)
-    }
+Φ.complexAnalysis = {
+    ν.preprocess : {
+        input_capture : [M.requirements ∧ C.context ∧ I.intent ∧ U.uncertainty⚠️], 
+        validation : [completeness_check ; accuracy_verify ; consistency_assess]
+    },
     
-    response_targets: {
-        latency: < 200ms ⚠(database_load_dependent)
-        availability: > 99.5% 🧪(monitoring_accuracy)
-        📊(performance_baseline_establishment_needed)
+    Π.processing : {
+        → ξ : [domain_classify, complexity_assess🌀, framework_selection],
+        → ε : [entity_extract🔍, relationship_identify, dependency_map📝],
+        → α : [validation🧱_run, conflict_detect, compatibility_check⚠️],
+        → ω : [coherence_validate, consistency_verify, quality_assess🧪],
+        → δ : [output_synthesize ∧ format_apply ∧ uncertainty_integrate⚠️]
     }
 }
 ```
 
----
+<details>
+<summary>📋 **Business Analysis Framework** (Click to expand)</summary>
 
-## 🔍 Advanced Framework Usage
-
-### Uncertainty Management Patterns
 ```phiprompt
-// Framework-compliant uncertainty handling
-user_behavior ≈ predictable_patterns ⚠(individual_variation_significant) → 
-adaptive_algorithms 🧪(machine_learning_effectiveness_hypothesis)
-
-// Proper evidence qualification  
-caching_strategy → performance_improvement 📊(benchmark_measurement_required)
-⚠(cache_hit_ratio_environment_dependent)
-```
-
-### Challenge Flag Integration
-```phiprompt
-// Layered uncertainty and verification markers
-🌀(user_journey_resembles_flowing_water) → intuitive_navigation_design
-🧱(complex_business_rules) ∧ 🎭(user_frustration_minimization) → 
-simplified_interface 🧪(usability_testing_needed) ⚠(subjective_preferences)
-```
-
-### Greek Module Organization
-```phiprompt
-## [Ψ.CONTENT_ANALYSIS]
-ρ.text_processing: {
-    tokenization: natural_language → structured_elements
-    sentiment_analysis: emotional_indicators → polarity_scores ⚠(context_dependency)
-    entity_extraction: named_entities → relationship_mapping 🧪(accuracy_model_dependent)
+##[S.M.A.R.T.INPUT]
+Collect.business_elements.S_M_A_R_T : {
+    Strategy.market_positioning, 
+    Metrics.performance_indicators, 
+    Analysis.competitive_landscape, 
+    Resources.capability_assessment, 
+    Timeline.implementation_roadmap
 }
 
-## [ℜ.VERIFICATION_PROTOCOL]
-claim_validation: {
-    ∀ assertion ∈ content → evidence_requirement_check
-    source_credibility: reputation_score ∧ bias_assessment
-    fact_checking: external_verification ⚠(source_availability_varies)
+##[ACTIVATE_MODULE]
+activate.Φ = ∀(S, M, A, R, T) → ALWAYS{
+    ν.preprocess.capture(business_request) → 
+    μ.input_collection.extract(S, M, A, R, T) → 
+    Π.business_analysis → 
+    Ω.output[
+        Strategic_Assessment : S → market_analysis ∧ 🎯positioning_clarity,
+        Performance_Framework : M → kpi_system ∧ 📊measurement_protocols,
+        Competitive_Intelligence : A → landscape_mapping ∧ 🔍opportunity_identification,
+        Resource_Optimization : R → capability_enhancement ∧ ⚙️efficiency_improvement,
+        Implementation_Plan : T → timeline_coordination ∧ 🚀execution_strategy
+    ] ⊕ risk_assessment⚠️ ⊕ success_metrics📊
 }
 ```
 
----
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Symbol Display Problems**
-- Install Unicode-compatible fonts (Fira Code, JetBrains Mono, Cascadia Code)
-- Verify VS Code font configuration supports mathematical symbols
-- Check operating system Unicode rendering capabilities ⚠(platform_differences)
-
-**IntelliSense Functionality**
-- Confirm file extension is `.φp` 
-- Verify language mode displays "PHIPROMPT" in status bar
-- Restart VS Code if language services fail to activate 🧪(restart_effectiveness)
-
-**AI Integration Issues**
-- Enable `phiprompt.enableCopilotContext` setting
-- Verify GitHub Copilot extension status and authentication
-- Check automatic context injection at document beginning
-
-**Performance Considerations**
-- Increase `phiprompt.lintingDelay` for large documents (>1000 lines)
-- Disable AI features if memory usage becomes problematic ⚠(hardware_dependent)
-- Use document folding for navigation in extensive files
+</details>
 
 ---
 
-## 🤝 Development & Contribution
+## 🎨 Symbol Reference
 
-### Local Development Setup
+### **🔢 Core Language Constructs**
+
+| PHIPROMPT | Description | Example |
+|---------|-------------|---------|
+| **Φ** | Main framework pipeline | `Φ = { Ψ: {...}, ℜ: {...}, Π: {...} }` |
+| **Ψ** | Optimizer module | `Ψ.filter: remove_duplicates ∧ consolidate_similar` |
+| **ℜ** | Forensics module | `ℜ.analyze: evidence → causal_chain → conclusion` |
+| **Π** | Processor module | `Π.compile: source_code → bytecode → execution` |
+
+### **🔀 Control Flow**
+
+| PHIPROMPT | Description | Example |
+|---------|-------------|---------|
+| **→** | Transformation arrow | `input_data → validate → process` |
+| **∀** | Universal quantifier | `∀ user ∈ system → authenticated` |
+| **∃** | Existential quantifier | `∃ error ∈ log → alert_admin` |
+| **∧** | Logical AND | `authenticated ∧ authorized → access_granted` |
+| **∨** | Logical OR | `admin ∨ owner → edit_permissions` |
+
+### **🚩 Challenge Flags**
+
+| PHIPROMPT | Description | Example |
+|---------|-------------|---------|
+| **🌀** | Metaphorical content | `user_journey 🌀(flows_like_river) → navigation_design` |
+| **🧱** | Nested conditional | `🧱(if auth ∧ (admin ∨ owner) ∧ ¬suspended) → full_access` |
+| **🎭** | Affective intent | `error_message 🎭(reassuring_tone) → user_confidence` |
+| **🧪** | Unverified claim | `🧪(performance_improves_with_caching) → implement_cache` |
+| **⚠️** | Explicit uncertainty | `server_response_time ⚠️(varies_by_load) → dynamic_scaling` |
+
+> **🔍 Interactive Learning**: Use `Ctrl+Shift+P` → "PHIPROMPT: Show Symbol Tutorial" for hands-on exploration with live examples.
+
+---
+
+## 🛠️ Development Features
+
+### **🎨 Code Formatting**
+
+PHIPROMPT includes a sophisticated formatter that maintains mathematical elegance:
+
+#### Formatting Rules:
+- **Symbol Spacing**: Consistent spacing around mathematical operators
+- **Hierarchical Indentation**: Clear visual structure for nested blocks  
+- **Line Length Management**: Automatic wrapping for readability
+- **Comment Preservation**: Maintains documentation integrity
+
+### **🔍 Real-time Linting**
+
+**Advanced Error Detection**:
+- **Symbol Validation**: Ensures proper PHIPROMPT symbol usage
+- **Context Analysis**: Validates symbols in appropriate contexts
+- **Performance Optimization**: Debounced linting reduces CPU usage
+- **Educational Feedback**: Helpful error messages for learning
+
+### **🧭 Navigation & IntelliSense**
+
+#### Go-to-Definition Features:
+- **Cross-file Navigation**: Jump between PHIPROMPT and related files
+- **Symbol Indexing**: Workspace-wide symbol tracking
+- **Method Resolution**: Smart method and property lookup
+- **Import Following**: Navigate to imported modules
+
+#### Auto-completion Capabilities:
+- **Context-aware Suggestions**: Different symbols for different scopes
+- **Fuzzy Matching**: Type partial keywords for symbol suggestions
+- **Documentation Integration**: Hover tooltips with explanations
+- **Snippet Expansion**: Complete code patterns with Tab completion
+
+---
+
+## ♿ Accessibility
+
+### **🌟 Universal Design Principles**
+
+PHIPROMPT is designed with accessibility at its core:
+
+#### **🔍 Screen Reader Support**
+- **Semantic Markup**: Proper HTML structure in documentation
+- **Alternative Text**: Descriptive labels for all visual elements
+- **Keyboard Navigation**: Full functionality without mouse interaction
+- **Voice Commands**: Compatible with voice recognition software
+
+#### **🎨 Visual Accessibility**
+- **High Contrast Support**: Adapts to system contrast preferences
+- **Customizable Fonts**: Support for dyslexia-friendly typefaces
+- **Zoom Compatibility**: Scales properly with browser/editor zoom
+- **Color Independence**: Information conveyed beyond color alone
+
+#### **⌨️ Keyboard Navigation**
+
+| Key Combination | Action | Context |
+|-----------------|--------|---------|
+| `Tab` | Navigate forward | All interactive elements |
+| `Shift + Tab` | Navigate backward | All interactive elements |
+| `Enter` / `Space` | Activate | Buttons and links |
+| `Escape` | Close/Cancel | Modal dialogs |
+| `F1` | Help/Documentation | Context-sensitive help |
+
+### **📋 Accessibility Compliance**
+
+✅ **WCAG 2.1 AA Compliant**
+- **Perceivable**: Content available to assistive technologies
+- **Operable**: Interface usable with various input methods  
+- **Understandable**: Information and UI operation is clear
+- **Robust**: Compatible with current and future assistive technologies
+
+> **🤝 Accessibility Commitment**: We strive to continuously improve accessibility. Report barriers via our [accessibility feedback form](https://github.com/Varietyz/vscode-extension/phiprompt-extension/issues/new?template=accessibility.md).
+
+---
+
+## 🤝 Contributing
+
+### **🌟 Ways to Contribute**
+
+Contributions welcome from developers of all experience levels:
+
+#### **🔧 Code Contributions**
+- **Bug Fixes**: Resolve issues and improve stability
+- **Feature Development**: Implement new PHIPROMPT capabilities
+- **Performance Optimization**: Enhance extension speed and efficiency
+- **Testing**: Expand test coverage and quality assurance
+
+#### **📚 Documentation**
+- **Tutorial Content**: Create learning materials and examples
+- **Translation**: Localize documentation for global accessibility
+- **Video Guides**: Develop multimedia learning resources
+- **Best Practices**: Document coding standards and patterns
+
+### **🚀 Development Setup**
+
+#### Prerequisites
 ```bash
-# Repository access
-git clone https://github.com/Varietyz/phicode-vscode-extension.git
-cd phicode-vscode-extension
+# Required tools
+node --version    # ≥ 16.0.0
+npm --version     # ≥ 8.0.0
+code --version    # ≥ 1.74.0
+git --version     # ≥ 2.25.0
+```
 
-# Dependency installation
+#### **Getting Started**
+```bash
+# 1️⃣ Clone repository
+git clone https://github.com/Varietyz/vscode-extension/phiprompt-extension.git
+cd phiprompt-extension
+
+# 2️⃣ Install dependencies
 npm install
 
-# Development environment
+# 3️⃣ Build extension
+npm run compile
+
+# 4️⃣ Launch development environment
 code .
-npm run watch
+# Press F5 to start debugging session
 ```
 
-### Contribution Guidelines
-- **Code Standards**: Follow TypeScript and ESLint configurations
-- **Symbol Consistency**: Maintain mathematical and logical semantics
-- **Framework Compliance**: Ensure changes align with PHIPROMPT principles ⚠(subjective_interpretation)
-- **Testing Requirements**: Validate functionality across different document sizes 🧪(coverage_completeness)
+### **📋 Contribution Guidelines**
 
-### Development Areas
-- **Symbol Extensions**: Mathematical and domain-specific notation additions
-- **Framework Enhancements**: Greek module system improvements
-- **AI Integration**: Enhanced contextual understanding and suggestions
-- **Performance Optimization**: Large document handling improvements 📊(benchmarking_needed)
+#### **Pull Request Process**
+1. **Fork** the repository and create a feature branch
+2. **Implement** changes with comprehensive tests
+3. **Document** new features and update existing documentation  
+4. **Test** across multiple platforms and VS Code versions
+5. **Submit** pull request with detailed description
 
----
-
-## 📄 Technical Information
-
-### System Requirements
-- **VS Code**: 1.74.0+ (⚠platform_compatibility_varies)
-- **Node.js**: 16.x+ for development environment
-- **Memory**: Minimum 4GB RAM recommended for large documents 🧪(usage_patterns_vary)
-- **Font Support**: Unicode mathematical symbol rendering capability
-
-### Extension Architecture
-- **Language Services**: TypeScript-based provider implementations
-- **Symbol Processing**: Unicode mathematical notation handling
-- **AI Integration**: GitHub Copilot API context injection ⚠(API_availability_dependent)
-- **Validation Engine**: Framework compliance checking algorithms
-
-### Performance Characteristics
-- **Startup Time**: < 2 seconds typical activation ⚠(hardware_dependent)
-- **Memory Usage**: < 50MB baseline, scales with document complexity 📊(measurement_methodology_varies)
-- **Validation Speed**: Real-time for documents < 1000 lines 🧪(performance_claims_require_verification)
+> **🎖️ Recognition**: Contributors are recognized in README, release notes, and our Hall of Fame for significant contributions.
 
 ---
 
-## 📋 License & Attribution
+## ❓ Support & FAQ
 
-**License**: MIT License - see repository for complete terms
+### **🆘 Getting Help**
 
-**Source Code**: https://github.com/Varietyz/phicode-vscode-extension.git
+#### **Community Support**
+- **📋 GitHub Discussions**: [Community forum](https://github.com/Varietyz/vscode-extension/phiprompt-extension/discussions)
+- **📧 Email Support**: jay@banes-lab.com
+- **📖 Documentation**: Comprehensive guides available in the `/docs` folder
+
+#### **Estimated Response Times**
+- **Critical Bugs**: Within 24 hours
+- **General Issues**: Within 72 hours  
+- **Feature Requests**: Within 1 week
+- **Documentation**: Within 48 hours
+
+<details>
+<summary><strong>📝 Can I use custom symbolic mappings?</strong></summary>
+
+Yes! Define a `CUSTOM_SYMBOLIC_MAP` in your workspace and the extension will automatically merge it with the base framework.
+
+```typescript
+// Add custom symbols like this
+export const CUSTOM_SYMBOLIC_MAP = {
+  "🏭": ["manufacturing", "industrial_process"],
+  "🧬": ["biotechnology", "genetic_analysis"],
+  "🌍": ["global_network", "distributed_system"]
+};
+```
+
+</details>
+
+<details>
+<summary><strong>🔍 How do I enable advanced validation features?</strong></summary>
+
+Enable comprehensive validation in your settings:
+```json
+{
+  "phiprompt.autoValidation": true,
+  "phiprompt.validatePipelineSequences": true,
+  "phiprompt.uncertaintyThreshold": 0.2
+}
+```
+</details>
+
+<details>
+<summary><strong>⚡ How do I optimize framework performance?</strong></summary>
+
+Use the complexity analysis tool (`Ctrl+Shift+A`) to identify optimization opportunities and follow the suggestions for module simplification.
+
+**Performance Best Practices:**
+- **Modular Design**: Break complex frameworks into smaller, reusable components
+- **Selective Validation**: Disable real-time validation for very large files
+- **Symbolic Density**: Balance symbolic complexity with readability requirements
+- **Memory Management**: Use the symbol mapping generator sparingly on large documents
+
+</details>
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 Project Information
+
+**Developed by:** [Jay Baleine](https://github.com/Varietyz) at [Banes Lab](https://banes-lab.com)  
+**Repository:** [GitHub - phiprompt-extension](https://github.com/Varietyz/vscode-extension/phiprompt-extension)  
+**Website:** [banes-lab.com](https://banes-lab.com)  
+**Version:** 1.0.0  
+**Last Updated:** August 2025
+
+> **🎯 Mission Statement:** Advancing the frontier of AI prompt engineering through mathematical precision, symbolic elegance, and developer-friendly tooling that transforms complex logical structures into intuitive, maintainable frameworks.
+
+**⭐ If this project helps your development workflow, please consider starring the repository to support continued development!**
+
+---
+
+<div align="center">
+
+*Built with ❤️ for the AI development community*
+
+</div>

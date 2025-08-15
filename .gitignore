@@ -411,3 +411,11 @@ GEN°README.md
 /TO-DO
 update_readme.py
 /phiprompt-extension/out
+*.bak
+*.bak2
+PROJECT_CONTENTS.txt
+/.TO-DO
+/.Phiprompt Framework Docs
+/.Frameworks
+PROJECT_TREE.md
+1.content_extract.py
